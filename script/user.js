@@ -3,7 +3,23 @@ import { userApi } from "../script/index.js";
 let user = [];
 let userArray = [];
 
+const searchBar = document.getElementById("searchBar");
 
+searchBar.addEventListener("keyup", (e) => {
+  const searchString = e.target.value.toLowerCase();
+
+  const filterUser = userArray.filter((userArray) => {
+    return (
+      userArray.name.first.toLowerCase().includes(searchString) ||
+      userArray.name.last.toLowerCase().includes(searchString)
+    );
+  });
+  if (filterUser == "") {
+    alert("Finner ingen ved det navnet");
+  }
+
+  showUser(filterUser);
+});
 
 async function fetchUserApi() {
   try {
@@ -12,8 +28,8 @@ async function fetchUserApi() {
     user.push(data);
     console.log(data.results);
 
-    data.results.filter((userfilter) => {
-      userArray.push(userfilter);
+    data.results.filter((e) => {
+      userArray.push(e);
       console.log(userArray);
     });
 
@@ -33,9 +49,9 @@ function showUser(userArray) {
 
     let img = document.createElement("img");
     img.classList.add("user-img");
-    img.style.height = "200px";
-    img.style.width = "200px";
-    img.src = userArray[i].picture.medium;
+    // img.style.height = "200px";
+    // img.style.width = "200px";
+    img.src = userArray[i].picture.large;
 
     let userName = document.createElement("h4");
     userName.innerText = "Navn: " + userArray[i].name.first;
@@ -43,15 +59,15 @@ function showUser(userArray) {
     let userLastName = document.createElement("h4");
     userLastName.innerText = "Etternavn: " + userArray[i].name.last;
 
-    let button = document.createElement("button");
-    button.setAttribute("id", "btn");
-    button.textContent = "Slett meg";
-    button.addEventListener("click", function () {
+    let deleteButton = document.createElement("button");
+    deleteButton.setAttribute("id", "btn");
+    deleteButton.textContent = "Slett meg";
+    deleteButton.addEventListener("click", function () {
       deleteUser(userArray, i);
     });
 
     userContainer.append(div);
-    div.append(img, userName, userLastName, button);
+    div.append(img, userName, userLastName, deleteButton);
   }
 }
 
