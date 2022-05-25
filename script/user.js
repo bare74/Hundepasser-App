@@ -26,11 +26,9 @@ async function fetchUserApi() {
     let response = await fetch(userApi);
     let data = await response.json();
     user.push(data);
-    console.log(data.results);
 
     data.results.filter((e) => {
       userArray.push(e);
-      console.log(userArray);
     });
 
     showUser(userArray);
@@ -49,15 +47,19 @@ function showUser(userArray) {
 
     let img = document.createElement("img");
     img.classList.add("user-img");
-    // img.style.height = "200px";
-    // img.style.width = "200px";
     img.src = userArray[i].picture.large;
 
-    let userName = document.createElement("h4");
-    userName.innerText = "Navn: " + userArray[i].name.first;
+    let userName = document.createElement("p");
+    userName.innerText = "Fornavn: " + userArray[i].name.first;
 
-    let userLastName = document.createElement("h4");
+    let userLastName = document.createElement("p");
     userLastName.innerText = "Etternavn: " + userArray[i].name.last;
+
+    let userEmail = document.createElement("p");
+    userEmail.innerText = "E-post: " + userArray[i].email;
+
+    let userPhone = document.createElement("p");
+    userPhone.innerText = "Mobil nr: " + userArray[i].phone;
 
     let deleteButton = document.createElement("button");
     deleteButton.setAttribute("id", "btn");
@@ -66,16 +68,52 @@ function showUser(userArray) {
       deleteUser(userArray, i);
     });
 
+    let editUser = document.createElement("button");
+    editUser.innerText = "Endre bruker";
+    editUser.classList.add("edit-user");
+    editUser.addEventListener("click", function () {
+      editUserMember(userArray, i);
+    });
+
+    div.append(
+      img,
+      userName,
+      userLastName,
+      userEmail,
+      userPhone,
+      deleteButton,
+      editUser
+    );
     userContainer.append(div);
-    div.append(img, userName, userLastName, deleteButton);
   }
 }
 
 function deleteUser(userArray, i) {
-  console.log(i);
+  console.log(userArray, i);
   let answer = prompt("Ønsker du å slette?(ja/nei)");
   if (answer === "ja") {
     userArray.splice(i, 1);
+    showUser(userArray);
+  }
+}
+
+function editUserMember(userArray, i) {
+  let editEmail = prompt("Tast inn ny epost adresse...");
+  let editPhone = prompt("Tast inn nytt mobilnr...");
+
+  if (editEmail == "" || editPhone == "") {
+    alert("Husk alle felter må fylles ut!");
+    return;
+  } else {
+    userArray[i] = {
+      picture: "",
+      name: "",
+      email: editEmail,
+      phone: editPhone,
+    };
+  }
+  let answer = prompt("Ønsker og endre? (ja/nei)");
+  if (answer === "ja") {
     showUser(userArray);
   }
 }
