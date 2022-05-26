@@ -1,48 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="stylesheet" href="./css/style.css" />
-      <link rel="stylesheet" href="./css/findsitter.css" />
-    <title>Hundepasser Application</title>
-  </head>
-  <body>
-        <header>
-      <div id="wrapper">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/findsitter.css" />
+  <title>Hundepasser Application</title>
+</head>
+
+<body>
+  <header>
+    <div id="wrapper">
       <div class="main_header">
         <img class="logo_img" src="./assets/dogicon.png" alt="Picture of Hundepasser logo" />
         <h1>HUNDEPASSER</h1>
         <div class="navigation">
           <ul>
             <li>
-              <a href="./index.html" class="link_header"><h4>Forside</h4></a>
+              <a href="./index.html" class="link_header">
+                <h4>Forside</h4>
+              </a>
             </li>
             <li>
-              <a href="./findsitter.html" class="link_header"
-                ><h4>Finn hundepasser</h4></a
-              >
+              <a href="./findsitter.html" class="link_header">
+                <h4>Finn hundepasser</h4>
+              </a>
             </li>
             <li>
               <a href="./dogsitter.html" class="link_header">
-                <h4>Bli hundepasser</h4></a
-              >
+                <h4>Bli hundepasser</h4>
+              </a>
             </li>
           </ul>
         </div>
       </div>
-    </header>
-    <main>
-      <div class="main-container">
-        <h1 class="head-txt">Trygg privat hundepass</h1>
-        <img src="./assets/pet.jpg" alt="Image of a sad dog">
-        <button class="btn btn-primary">TEST</button>
-      </div>
-      <div class="list-box">
-        <div id="random_user_container"></div>
-      </div>
-    </main>
-    <script type="module" src="./script/index.js"></script>
-  </body>
+  </header>
+  <main>
+    <div class="main-container">
+      <h1 class="head-txt">Trygg privat hundepass</h1>
+      <img src="./assets/pet.jpg" alt="Image of a sad dog">
+      <button class="btn btn-primary" onclick="document.location='./findsitter.html'">Finn hundepasser</button>
+    </div>
+    <div class="list-box">
+      <div id="random_user_container"></div>
+    </div>
+    <div class="container">
+      <button id="btn btn-secondary" onclick="document.location='./findsitter.html'" type="submit">Se flere
+        Hundepassere</button>
+    </div>
+  </main>
+  <footer>
+    <div class="footer">
+
+    </div>
+  </footer>
+  <script type="module" src="./script/index.js"></script>
+</body>
+
 </html>

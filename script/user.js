@@ -11,7 +11,8 @@ searchBar.addEventListener("keyup", (e) => {
   const filterUser = userArray.filter((userArray) => {
     return (
       userArray.name.first.toLowerCase().includes(searchString) ||
-      userArray.name.last.toLowerCase().includes(searchString)
+      userArray.name.last.toLowerCase().includes(searchString) ||
+      userArray.location.country.toLowerCase().includes(searchString)
     );
   });
   if (filterUser == "") {
@@ -61,6 +62,17 @@ function showUser(userArray) {
     let userPhone = document.createElement("p");
     userPhone.innerText = "Mobil nr: " + userArray[i].phone;
 
+    let location = document.createElement("p");
+    location.innerText = "Land: " + userArray[i].location.country;
+
+    let userPage = document.createElement("button");
+    userPage.setAttribute("id", "user-page");
+    userPage.textContent = "Mere info";
+    userPage.addEventListener("click", function () {
+      userpageInfo(i);
+      userpageArray(userArray)
+    });
+
     let deleteButton = document.createElement("button");
     deleteButton.setAttribute("id", "btn");
     deleteButton.textContent = "Slett meg";
@@ -68,12 +80,12 @@ function showUser(userArray) {
       deleteUser(userArray, i);
     });
 
-    let editUser = document.createElement("button");
-    editUser.innerText = "Endre bruker";
-    editUser.classList.add("edit-user");
-    editUser.addEventListener("click", function () {
-      editUserMember(userArray, i);
-    });
+    // let editUser = document.createElement("button");
+    // editUser.innerText = "Endre bruker";
+    // editUser.classList.add("edit-user");
+    // editUser.addEventListener("click", function () {
+    //   editUserMember(userArray, i);
+    // });
 
     div.append(
       img,
@@ -81,41 +93,99 @@ function showUser(userArray) {
       userLastName,
       userEmail,
       userPhone,
-      deleteButton,
-      editUser
+      location,
+      userPage,
+      deleteButton
+      // editUser
     );
     userContainer.append(div);
   }
 }
 
 function deleteUser(userArray, i) {
-  console.log(userArray, i);
   let answer = prompt("Ønsker du å slette?(ja/nei)");
   if (answer === "ja") {
     userArray.splice(i, 1);
+    console.log(i);
     showUser(userArray);
   }
 }
 
-function editUserMember(userArray, i) {
-  let editEmail = prompt("Tast inn ny epost adresse...");
-  let editPhone = prompt("Tast inn nytt mobilnr...");
+// function editUserMember(userArray, i) {
+//   let editEmail = prompt("Tast inn ny epost adresse...");
+//   let editPhone = prompt("Tast inn nytt mobilnr...");
 
-  if (editEmail == "" || editPhone == "") {
-    alert("Husk alle felter må fylles ut!");
-    return;
-  } else {
-    userArray[i] = {
-      picture: "",
-      name: "",
-      email: editEmail,
-      phone: editPhone,
-    };
+//   if (editEmail == "" || editPhone == "") {
+//     alert("Husk alle felter må fylles ut!");
+//     return;
+//   } else {
+//     userArray[i] = {
+//       picture: "",
+//       name: "",
+//       email: editEmail,
+//       phone: editPhone,
+//     };
+//   }
+//   let answer = prompt("Ønsker og endre? (ja/nei)");
+//   if (answer === "ja") {
+//     showUser(userArray);
+//   }
+// }
+
+let filterCountry = document.querySelector(".btn-country");
+
+filterCountry.addEventListener("click", () => {
+  let selectedCountry = document.getElementById("country-list").value;
+  if (selectedCountry === "none") {
+    alert("Vennligst velg et land");
   }
-  let answer = prompt("Ønsker og endre? (ja/nei)");
-  if (answer === "ja") {
-    showUser(userArray);
+  if (selectedCountry === "United States") {
+    const filterland = userArray.filter((userArray) => {
+      if (userArray.location.country === "United States") {
+        return userArray.location.country;
+      }
+    });
+
+    showUser(filterland);
   }
+
+  if (selectedCountry === "Iran") {
+    const filterland = userArray.filter((userArray) => {
+      if (userArray.location.country === "Iran") {
+        return userArray.location.country;
+      }
+    });
+
+    showUser(filterland);
+  }
+
+  if (selectedCountry === "Spain") {
+    const filterland = userArray.filter((userArray) => {
+      if (userArray.location.country === "Spain") {
+        return userArray.location.country;
+      }
+    });
+
+    showUser(filterland);
+  }
+  if (selectedCountry === "Norway") {
+    const filterland = userArray.filter((userArray) => {
+      if (userArray.location.country === "Norway") {
+        return userArray.location.country;
+      }
+    });
+
+    showUser(filterland);
+  }
+});
+
+
+
+function userpageInfo(i) {
+  localStorage.setItem("cart", JSON.stringify(i));
+  window.open("./userpage.html");
 }
-
+function userpageArray(userArray){
+  localStorage.setItem("test", JSON.stringify(userArray));
+}
 fetchUserApi();

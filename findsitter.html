@@ -1,47 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="stylesheet" href="./css/style.css" />
-      <link rel="stylesheet" href="./css/findsitter.css" />
-    <title>Hundepasser Application</title>
-  </head>
-  <body>
-        <header>
-      <div id="wrapper">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/findsitter.css" />
+  <title>Hundepasser Application</title>
+</head>
+
+<body>
+  <header>
+    <div id="wrapper">
       <div class="main_header">
         <img class="logo_img" src="./assets/dogicon.png" alt="Picture of Hundepasser logo" />
         <h1>HUNDEPASSER</h1>
         <div class="navigation">
           <ul>
             <li>
-              <a href="./index.html" class="link_header"><h4>Forside</h4></a>
+              <a href="./index.html" class="link_header">
+                <h4>Forside</h4>
+              </a>
             </li>
             <li>
-              <a href="./findsitter.html" class="link_header"
-                ><h4>Finn hundepasser</h4></a
-              >
+              <a href="./findsitter.html" class="link_header">
+                <h4>Finn hundepasser</h4>
+              </a>
             </li>
             <li>
               <a href="./dogsitter.html" class="link_header">
-                <h4>Bli hundepasser</h4></a
-              >
+                <h4>Bli hundepasser</h4>
+              </a>
             </li>
           </ul>
         </div>
       </div>
-    </header>
-    <div id="searchWrapper">
-      <input
-        type="text"
-        name="searchBar"
-        id="searchBar"
-        placeholder="Søk etter hundepasser"
-      />
-    </div>
-      <div id="user-container"></div>
-    <script type="module" src="./script/user.js"></script>
-  </body>
+  </header>
+  <div id="countryMenu" class="countrylist">
+    <label for="select">
+      <p>Velg Land:</p>
+    </label>
+    <select id="country-list">
+
+      <option value="none">velg</option>
+      <option value="United States">United States</option>
+      <option value="Iran">Iran</option>
+      <option value="Spain">Spain</option>
+      <option value="Norway">Norway</option>
+    </select>
+  </div>
+  <button class="btn-country">Lagre</button>
+  <div id="searchWrapper">
+    <input type="text" name="searchBar" id="searchBar" placeholder="Søk etter hundepasser" />
+  </div>
+  <div id="user-container"></div>
+  <script type="module" src="./script/user.js"></script>
+</body>
+
 </html>

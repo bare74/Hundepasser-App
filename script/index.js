@@ -1,4 +1,5 @@
-export const userApi = "https://randomuser.me/api/?results=150";
+export const userApi = "https://randomuser.me/api/?results=200";
+
 
 let user = [];
 let userArray = [];
@@ -18,12 +19,16 @@ async function fetchUserApi() {
   }
 }
 
+
+
+
 setInterval(function () {
-  randomUser = userArray.slice(0, 3).map(function (i) {
+  randomUser = userArray.slice(0, 4).map(function () {
     return this.splice(Math.floor(Math.random() * this.length), 1)[0];
   }, userArray.slice());
 
   showRandomUser(randomUser);
+}, 3000);
 
   function showRandomUser(randomUser) {
     let randomUserContainer = document.getElementById("random_user_container");
@@ -39,13 +44,13 @@ setInterval(function () {
 
       let userName = document.createElement("p");
       userName.innerText =
-        "Navn: " + randomUser[i].name.first + " " + randomUser[i].name.last;
+        randomUser[i].name.first + " " + randomUser[i].name.last;
 
       div.append(img, userName);
       randomUserContainer.append(div);
     }
   }
-}, 10000);
+
 // function sleep(e) {
 //   return new Promise((resolve) => setTimeout(resolve, e));
 // }
@@ -57,4 +62,7 @@ setInterval(function () {
 // }
 
 // delayedGreeting();
+
+
+
 fetchUserApi();

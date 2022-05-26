@@ -62,7 +62,7 @@ justify-content: center;
   margin-right: 10px;
 } */
 
-button {
+#btn, #user-page {
   padding: 7px;
   border-radius: 30px;
   background: #d4af7a;
@@ -75,4 +75,7 @@ button {
   font-size: 15px;
 }
 
-
+.countrylist{
+  margin-top: 80px;
+    margin-bottom: 40px;
+}
