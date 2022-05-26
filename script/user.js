@@ -11,8 +11,7 @@ searchBar.addEventListener("keyup", (e) => {
   const filterUser = userArray.filter((userArray) => {
     return (
       userArray.name.first.toLowerCase().includes(searchString) ||
-      userArray.name.last.toLowerCase().includes(searchString) ||
-      userArray.location.country.toLowerCase().includes(searchString)
+      userArray.name.last.toLowerCase().includes(searchString)
     );
   });
   if (filterUser == "") {
