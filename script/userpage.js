@@ -18,16 +18,21 @@ let img = document.createElement("img");
 img.classList.add("user-img");
 img.src = first.picture.large;
 
-let userName = document.createElement("p");
-userName.innerText = "Fornavn: " + first.name.first;
+let userName = document.createElement("h1");
+userName.classList.add("name");
+userName.innerText = first.name.first;
 
-let userLastName = document.createElement("p");
-userLastName.innerText = "Etternavn: " + first.name.last;
+let userLastName = document.createElement("h1");
+userLastName.classList.add("last-name");
+userLastName.innerText = first.name.last;
 
-let userEmail = document.createElement("p");
-userEmail.innerText = "E-post: " + first.email;
+let userEmail = document.createElement("a");
+userEmail.classList.add("email")
+userEmail.innerText = first.email;
+userEmail.href = "mailto: "+ first.email;
 
 let userPhone = document.createElement("p");
+userPhone.classList.add("phone");
 userPhone.innerText = "Mobil nr: " + first.phone;
 
 

@@ -1,4 +1,4 @@
-import { userApi } from "../script/index.js";
+import { userApi } from "./index.js";
 
 let user = [];
 let userArray = [];

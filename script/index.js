@@ -1,4 +1,4 @@
-export const userApi = "https://randomuser.me/api/?results=200";
+export const userApi = "https://randomuser.me/api/?results=10";
 
 
 let user = [];
@@ -22,13 +22,13 @@ async function fetchUserApi() {
 
 
 
-setInterval(function () {
-  randomUser = userArray.slice(0, 4).map(function () {
-    return this.splice(Math.floor(Math.random() * this.length), 1)[0];
-  }, userArray.slice());
+// setInterval(function () {
+//   randomUser = userArray.slice(0, 4).map(function () {
+//     return this.splice(Math.floor(Math.random() * this.length), 1)[0];
+//   }, userArray.slice());
 
-  showRandomUser(randomUser);
-}, 3000);
+//   showRandomUser(randomUser);
+// }, 3000);
 
   function showRandomUser(randomUser) {
     let randomUserContainer = document.getElementById("random_user_container");
