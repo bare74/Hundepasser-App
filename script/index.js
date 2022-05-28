@@ -1,4 +1,4 @@
-export const userApi = "https://randomuser.me/api/?results=200";
+export const userApi = "https://randomuser.me/api/?page=3&results=200&seed=abc";
 
 let user = [];
 let userArray = [];
@@ -21,17 +21,22 @@ async function fetchUserApi() {
 
 function randomArray(userArray) {
   localStorage.setItem("randomArray", JSON.stringify(userArray));
+  localStorage.setItem("userArray", JSON.stringify(userArray));
+  
 }
 
 var randomSitterArray = JSON.parse(localStorage.getItem("randomArray"));
 
-setInterval(function () {
-  randomUser = randomSitterArray.slice(0, 4).map(function () {
-    return this.splice(Math.floor(Math.random() * this.length), 1)[0];
-  }, randomSitterArray.slice());
+// setInterval(function () {
+//   randomUser = randomSitterArray.slice(0, 4).map(function () {
+//     return this.splice(Math.floor(Math.random() * this.length), 1)[0];
+//   }, randomSitterArray.slice());
 
-  showRandomUser(randomUser);
-}, 3000);
+//   showRandomUser(randomUser);
+// }, 3000);
+
+
+
 
 function showRandomUser(randomUser) {
   let randomUserContainer = document.getElementById("random_user_container");
@@ -53,4 +58,13 @@ function showRandomUser(randomUser) {
     randomUserContainer.append(div);
   }
 }
+
+
+// window.onbeforeunload = function () {
+//   console.log("about to clear event listeners prior to leaving page");
+//   // clearInterval(interval, showRandomUser, randomUser, setInterval);
+//   // localStorage.clear(randomSitterArray);
+// };
+
+
 fetchUserApi();

@@ -34,7 +34,7 @@
       </div>
     </header>
     <main>
-      <p class="tip">Click on button in image container</p>
+      <!-- <p class="tip">Click on button in image container</p>
 <div class="cont">
   <div class="form sign-in">
     <h2>Welcome back,</h2>
@@ -83,8 +83,31 @@
       <button type="button" class="fb-btn">Join with <span>facebook</span></button>
     </div>
   </div>
+</div> -->
+<div class="new-user-container">
+  <h1>Ny hundepass bruker:</h1>
+  <div class="new-user-box">
+  <div class="new-container">
+    <input type="text" placeholder="Navn..." id="user-name" />
+    <input type="text" placeholder="Etternavn..." id="user-lastname" />
+    <input type="text" placeholder="Mobil nummer..." id="user-cell" />
+    <input type="text" placeholder="Epost..." id="user-email" />
+    <h5>Velg land</h5>
+    <select id="country-list">
+      <option value="none">velg</option>
+      <option value="United States">United States</option>
+      <option value="Iran">Iran</option>
+      <option value="Spain">Spain</option>
+      <option value="Norway">Norway</option>
+    </select>
+    <!-- <h5>Last opp bilde</h5> -->
+    <!-- <input type='file' id="readUrl">
+    <img id="uploadedImage" src="#" alt="Uploaded Image" accept="image/png, image/jpeg" style="display:none;"> -->
+    <button id="add-user-btn">Lagre</button>
+  </div>
+  </div>
 </div>
     </main>
-    <script src="./script/adduser.js"></script>
+    <script type="module" src="./script/adduser.js"></script>
   </body>
 </html>

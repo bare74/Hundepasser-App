@@ -1,7 +1,11 @@
-import { userApi } from "./index.js";
+// import { userApi } from "./index.js";
 
-let user = [];
-let userArray = [];
+// let user = [];
+// let userArray = [];
+
+var userArray = JSON.parse(localStorage.getItem("userArray"));
+console.log(userArray);
+
 
 const searchBar = document.getElementById("searchBar");
 
@@ -21,21 +25,21 @@ searchBar.addEventListener("keyup", (e) => {
   showUser(filterUser);
 });
 
-async function fetchUserApi() {
-  try {
-    let response = await fetch(userApi);
-    let data = await response.json();
-    user.push(data);
+// async function fetchUserApi() {
+//   try {
+//     let response = await fetch(userApi);
+//     let data = await response.json();
+//     user.push(data);
 
-    data.results.filter((e) => {
-      userArray.push(e);
-    });
+//     data.results.filter((e) => {
+//       userArray.push(e);
+//     });
 
-    showUser(userArray);
-  } catch (err) {
-    console.log(err);
-  }
-}
+//     showUser(userArray);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
 
 function showUser(userArray) {
   let userContainer = document.getElementById("user-container");
@@ -79,12 +83,13 @@ function showUser(userArray) {
       deleteUser(userArray, i);
     });
 
-    // let editUser = document.createElement("button");
-    // editUser.innerText = "Endre bruker";
-    // editUser.classList.add("edit-user");
-    // editUser.addEventListener("click", function () {
-    //   editUserMember(userArray, i);
-    // });
+    let editUser = document.createElement("button");
+    editUser.setAttribute("id", "btn");
+    editUser.innerText = "Endre bruker";
+    editUser.classList.add("edit-user");
+    editUser.addEventListener("click", function () {
+      editUserMember(userArray, i);
+    });
 
     div.append(
       img,
@@ -94,8 +99,8 @@ function showUser(userArray) {
       userPhone,
       location,
       userPage,
-      deleteButton
-      // editUser
+      deleteButton,
+      editUser,
     );
     userContainer.append(div);
   }
@@ -110,26 +115,24 @@ function deleteUser(userArray, i) {
   }
 }
 
-// function editUserMember(userArray, i) {
-//   let editEmail = prompt("Tast inn ny epost adresse...");
-//   let editPhone = prompt("Tast inn nytt mobilnr...");
+function editUserMember(userArray, i) {
+  let editEmail = prompt("Tast inn ny epost adresse...");
+  let editPhone = prompt("Tast inn nytt mobilnr...");
 
-//   if (editEmail == "" || editPhone == "") {
-//     alert("Husk alle felter må fylles ut!");
-//     return;
-//   } else {
-//     userArray[i] = {
-//       picture: "",
-//       name: "",
-//       email: editEmail,
-//       phone: editPhone,
-//     };
-//   }
-//   let answer = prompt("Ønsker og endre? (ja/nei)");
-//   if (answer === "ja") {
-//     showUser(userArray);
-//   }
-// }
+  if (editEmail == "" || editPhone == "") {
+    alert("Husk alle felter må fylles ut!");
+    return;
+  } else {
+    userArray[i] = {
+      email: editEmail,
+      phone: editPhone,
+    };
+  }
+  let answer = prompt("Ønsker og endre? (ja/nei)");
+  if (answer === "ja") {
+    showUser(userArray);
+  }
+}
 
 let filterCountry = document.querySelector(".btn-country");
 
@@ -189,4 +192,5 @@ function userpageInfo(i) {
 function userpageArray(userArray){
   localStorage.setItem("sitterArray", JSON.stringify(userArray));
 }
-fetchUserApi();
+// fetchUserApi();
+showUser(userArray);
