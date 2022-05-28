@@ -27,13 +27,13 @@ function randomArray(userArray) {
 
 var randomSitterArray = JSON.parse(localStorage.getItem("randomArray"));
 
-// setInterval(function () {
-//   randomUser = randomSitterArray.slice(0, 4).map(function () {
-//     return this.splice(Math.floor(Math.random() * this.length), 1)[0];
-//   }, randomSitterArray.slice());
+setInterval(function () {
+  randomUser = randomSitterArray.slice(0, 4).map(function () {
+    return this.splice(Math.floor(Math.random() * this.length), 1)[0];
+  }, randomSitterArray.slice());
 
-//   showRandomUser(randomUser);
-// }, 3000);
+  showRandomUser(randomUser);
+}, 3000);
 
 
 
