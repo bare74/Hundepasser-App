@@ -91,7 +91,6 @@ function deleteUser(userArray, i) {
   let answer = prompt("Ønsker du å slette?(ja/nei)");
   if (answer === "ja") {
     userArray.splice(i, 1);
-    console.log(i);
     showUser(userArray);
   }
 }
@@ -104,6 +103,7 @@ function editUserMember(userArray, i) {
     alert("Husk alle felter må fylles ut!");
     return;
   } else {
+    console.log(userArray[i]);
     userArray[i] = {
       email: editEmail,
       phone: editPhone,

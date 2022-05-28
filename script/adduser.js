@@ -1,5 +1,8 @@
 var userArray = JSON.parse(localStorage.getItem("userArray"));
 
+let adduserBtn = document.getElementById("add-user-btn");
+adduserBtn.addEventListener("click", createNewUser);
+
 function createNewUser() {
   let userName = document.getElementById("user-name").value;
   let userLastName = document.getElementById("user-lastname").value;
@@ -32,9 +35,12 @@ function createNewUser() {
   if (answer === "ja") {
     console.log(userArray);
     localStorage.setItem("userArray", JSON.stringify(userArray));
-    window.open("./findsitter.html");
+    document.write(
+      `<h1 id="sucsess">` + "Gratulere som ny registret hundepasser" + `</h1>`
+    );
+    setTimeout(() => {
+      window.open("./findsitter.html");
+      document.close();
+    }, 3000);
   }
 }
-
-let adduserBtn = document.getElementById("add-user-btn");
-adduserBtn.addEventListener("click", createNewUser);
