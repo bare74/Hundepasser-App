@@ -59,26 +59,19 @@ body {
   transform: translate3D(0, -2px, 0);
 }
 
-/* #btn{
-  margin-right: 10px;
-} */
-
-
-
 .country-list {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
   margin-top: 130px;
   justify-content: center;
-
 }
 
 select {
   width: 200px;
 }
 
-
 .btn-country {
-  background-color: blue;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
