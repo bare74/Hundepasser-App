@@ -134,6 +134,10 @@ function deleteUser(userArray, i) {
 let filterCountry = document.querySelector(".btn-country");
 
 filterCountry.addEventListener("click", () => {
+
+
+
+ 
   let selectedCountry = document.getElementById("country-list").value;
   if (selectedCountry === "none") {
     alert("Vennligst velg et land");
@@ -178,13 +182,11 @@ filterCountry.addEventListener("click", () => {
   }
 });
 
-
-
 function userpageInfo(i) {
-  localStorage.setItem("cart", JSON.stringify(i));
+  localStorage.setItem("user-cart", JSON.stringify(i));
   window.open("./userpage.html");
 }
 function userpageArray(userArray){
-  localStorage.setItem("test", JSON.stringify(userArray));
+  localStorage.setItem("sitterArray", JSON.stringify(userArray));
 }
 fetchUserApi();

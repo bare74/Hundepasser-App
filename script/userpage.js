@@ -1,12 +1,12 @@
-var cart = JSON.parse(localStorage.getItem("cart"));
-console.log(cart);
+var userCart = JSON.parse(localStorage.getItem("user-cart"));
+console.log(userCart);
 
-var test = JSON.parse(localStorage.getItem("test"));
-console.log(test);
+var sitterArray = JSON.parse(localStorage.getItem("sitterArray"));
+console.log(sitterArray);
 
 
-var first = test[cart];
-console.log(first);
+var user = sitterArray[userCart];
+console.log(user);
 
 let userContainer = document.getElementById("user-cart");
 userContainer.innerHTML = "";
@@ -16,32 +16,24 @@ div.classList.add("user-card");
 
 let img = document.createElement("img");
 img.classList.add("user-img");
-img.src = first.picture.large;
+img.src = user.picture.large;
 
 let userName = document.createElement("h1");
 userName.classList.add("name");
-userName.innerText = first.name.first;
+userName.innerText = user.name.first;
 
 let userLastName = document.createElement("h1");
 userLastName.classList.add("last-name");
-userLastName.innerText = first.name.last;
+userLastName.innerText = user.name.last;
 
 let userEmail = document.createElement("a");
 userEmail.classList.add("email")
-userEmail.innerText = first.email;
-userEmail.href = "mailto: "+ first.email;
+userEmail.innerText = user.email;
+userEmail.href = "mailto: "+ user.email;
 
 let userPhone = document.createElement("p");
 userPhone.classList.add("phone");
-userPhone.innerText = "Mobil nr: " + first.phone;
-
-
-// let editUser = document.createElement("button");
-// editUser.innerText = "Endre bruker";
-// editUser.classList.add("edit-user");
-// editUser.addEventListener("click", function () {
-//   editUserMember(userArray, i);
-// });
+userPhone.innerText = "Mobil nr: " + user.phone;
 
 div.append(
   img,
@@ -52,36 +44,4 @@ div.append(
   // editUser
 );
 userContainer.append(div);
-
-
-// document.getElementById("user-cart").innerHTML =
-//   first.name.first +
-//   " " +
-//   first.name.last +
-//   " " +
-//   first.email +
-//   " " +
-//   first.picture.large;
-
-// function showUserCart (first){
-// let userCart = document.getElementById("user-cart");
-// userCart.innerHTML = "";
-
-
-//    for (let i = 0; i < first.length; i++) {
-//       let div = document.createElement("div");
-//       div.style.backgroundColor = "red"
-//       div.classList.add("random-user-card"); 
-
-//       let img = document.createElement("img");
-//       img.classList.add("user-img");
-//       img.src = first[i].picture.large;
-
-//       div.append(
-//         img,
-//       );
-//       userCart.append(div);
-// }}
-
-// showUserCart(cart);
 
