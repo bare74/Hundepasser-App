@@ -1,6 +1,4 @@
 var userArray = JSON.parse(localStorage.getItem("userArray"));
-console.log(userArray);
-
 
 const searchBar = document.getElementById("searchBar");
 
@@ -91,6 +89,7 @@ function deleteUser(userArray, i) {
   let answer = prompt("Ønsker du å slette?(ja/nei)");
   if (answer === "ja") {
     userArray.splice(i, 1);
+    localStorage.setItem("userArray", JSON.stringify(userArray));
     showUser(userArray);
   }
 }

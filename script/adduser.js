@@ -9,7 +9,7 @@ function createNewUser() {
   let userCell = document.getElementById("user-cell").value;
   let userEmail = document.getElementById("user-email").value;
   let country = document.getElementById("country-list").value;
-  let img = "./assets/dog.jpg";
+  let img = "./assets/dog1.jpg";
 
   if (
     userName == "" ||

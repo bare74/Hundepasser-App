@@ -22,7 +22,6 @@ async function fetchUserApi() {
 function randomArray(userArray) {
   localStorage.setItem("randomArray", JSON.stringify(userArray));
   localStorage.setItem("userArray", JSON.stringify(userArray));
-
 }
 
 var randomSitterArray = JSON.parse(localStorage.getItem("randomArray"));
