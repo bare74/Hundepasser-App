@@ -1,8 +1,3 @@
-// import { userApi } from "./index.js";
-
-// let user = [];
-// let userArray = [];
-
 var userArray = JSON.parse(localStorage.getItem("userArray"));
 console.log(userArray);
 
@@ -25,21 +20,7 @@ searchBar.addEventListener("keyup", (e) => {
   showUser(filterUser);
 });
 
-// async function fetchUserApi() {
-//   try {
-//     let response = await fetch(userApi);
-//     let data = await response.json();
-//     user.push(data);
 
-//     data.results.filter((e) => {
-//       userArray.push(e);
-//     });
-
-//     showUser(userArray);
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
 
 function showUser(userArray) {
   let userContainer = document.getElementById("user-container");
@@ -192,5 +173,5 @@ function userpageInfo(i) {
 function userpageArray(userArray){
   localStorage.setItem("sitterArray", JSON.stringify(userArray));
 }
-// fetchUserApi();
+
 showUser(userArray);

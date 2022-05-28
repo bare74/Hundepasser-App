@@ -1,12 +1,8 @@
 var userCart = JSON.parse(localStorage.getItem("user-cart"));
-console.log(userCart);
 
 var sitterArray = JSON.parse(localStorage.getItem("sitterArray"));
-console.log(sitterArray);
-
 
 var user = sitterArray[userCart];
-console.log(user);
 
 let userContainer = document.getElementById("user-cart");
 userContainer.innerHTML = "";
@@ -27,9 +23,9 @@ userLastName.classList.add("last-name");
 userLastName.innerText = user.name.last;
 
 let userEmail = document.createElement("a");
-userEmail.classList.add("email")
+userEmail.classList.add("email");
 userEmail.innerText = user.email;
-userEmail.href = "mailto: "+ user.email;
+userEmail.href = "mailto: " + user.email;
 
 let userPhone = document.createElement("p");
 userPhone.classList.add("phone");
@@ -40,8 +36,6 @@ div.append(
   userName,
   userLastName,
   userEmail,
-  userPhone,
-  // editUser
+  userPhone
 );
 userContainer.append(div);
-

@@ -1,4 +1,4 @@
-export const userApi = "https://randomuser.me/api/?page=3&results=200&seed=abc";
+const userApi = "https://randomuser.me/api/?page=3&results=200&seed=abc";
 
 let user = [];
 let userArray = [];
@@ -22,7 +22,7 @@ async function fetchUserApi() {
 function randomArray(userArray) {
   localStorage.setItem("randomArray", JSON.stringify(userArray));
   localStorage.setItem("userArray", JSON.stringify(userArray));
-  
+
 }
 
 var randomSitterArray = JSON.parse(localStorage.getItem("randomArray"));

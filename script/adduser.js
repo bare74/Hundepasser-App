@@ -1,5 +1,4 @@
 var userArray = JSON.parse(localStorage.getItem("userArray"));
-console.log(userArray);
 
 function createNewUser() {
   let userName = document.getElementById("user-name").value;
@@ -8,7 +7,6 @@ function createNewUser() {
   let userEmail = document.getElementById("user-email").value;
   let country = document.getElementById("country-list").value;
   let img = "./assets/dog.jpg";
-
 
   if (
     userName == "" ||
@@ -27,19 +25,16 @@ function createNewUser() {
       phone: userCell,
       email: userEmail,
       location: { country: country },
-      // picture: userImg,
     });
   }
 
   let answer = prompt("Ønsker du å opprette en bruker? (ja/nei)");
   if (answer === "ja") {
-    // showStaffCards(staffArray);
     console.log(userArray);
     localStorage.setItem("userArray", JSON.stringify(userArray));
-    window.open("../findsitter.html");
+    window.open("./findsitter.html");
   }
 }
 
 let adduserBtn = document.getElementById("add-user-btn");
 adduserBtn.addEventListener("click", createNewUser);
-
