@@ -41,8 +41,8 @@
     clear: both;
     font-size: 38px;
     opacity: 0.7;
-    top: 29%;
     left: 51%;
+    top: 45%;
 }
 
 .last-name {
@@ -67,12 +67,12 @@
     clear: both;
     font-size: 28px;
     opacity: 0.7;
-    top: 35%;
+    top: 70%;
     left: 51%;
 }
 
 .email {
     position: absolute;
-    top: 600px;
+    top: 550px;
     left: 51%;
 }

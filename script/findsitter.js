@@ -104,12 +104,16 @@ function editUserMember(userArray, i) {
   } else {
     console.log(userArray[i]);
     userArray[i] = {
+      picture: { large: ".assets/dog1.jpg" },
+      name: { first: true, last: true },
       email: editEmail,
       phone: editPhone,
+      location: { country: true },
     };
   }
   let answer = prompt("Ønsker og endre? (ja/nei)");
   if (answer === "ja") {
+    localStorage.setItem("userArray", JSON.stringify(userArray));
     showUser(userArray);
   }
 }
