@@ -1,7 +1,9 @@
+//send API to localStorage
 var userArray = JSON.parse(localStorage.getItem("userArray"));
 
 const searchBar = document.getElementById("searchBar");
 
+//Search for users
 searchBar.addEventListener("keyup", (e) => {
   const searchString = e.target.value.toLowerCase();
 
@@ -19,7 +21,7 @@ searchBar.addEventListener("keyup", (e) => {
 });
 
 
-
+//Cards for each user 
 function showUser(userArray) {
   let userContainer = document.getElementById("user-container");
   userContainer.innerHTML = "";
@@ -85,6 +87,7 @@ function showUser(userArray) {
   }
 }
 
+//Delete user
 function deleteUser(userArray, i) {
   let answer = prompt("Ønsker du å slette?(ja/nei)");
   if (answer === "ja") {
@@ -94,6 +97,7 @@ function deleteUser(userArray, i) {
   }
 }
 
+//Edit user
 function editUserMember(userArray, i) {
   let editEmail = prompt("Tast inn ny epost adresse...");
   let editPhone = prompt("Tast inn nytt mobilnr...");
@@ -104,11 +108,11 @@ function editUserMember(userArray, i) {
   } else {
     console.log(userArray[i]);
     userArray[i] = {
-      picture: { large: ".assets/dog1.jpg" },
+      picture: { large: "./assets/dog1.jpg" },
       name: { first: true, last: true },
       email: editEmail,
       phone: editPhone,
-      location: { country: true },
+      location: { country:},
     };
   }
   let answer = prompt("Ønsker og endre? (ja/nei)");
@@ -118,6 +122,7 @@ function editUserMember(userArray, i) {
   }
 }
 
+//Filter user by country
 let filterCountry = document.querySelector(".btn-country");
 
 filterCountry.addEventListener("click", () => {
@@ -169,10 +174,13 @@ filterCountry.addEventListener("click", () => {
   }
 });
 
+//Send user info to loccalStorage
 function userpageInfo(i) {
   localStorage.setItem("user-cart", JSON.stringify(i));
   window.open("./userpage.html");
 }
+
+//Send user info to own array
 function userpageArray(userArray){
   localStorage.setItem("sitterArray", JSON.stringify(userArray));
 }

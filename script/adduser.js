@@ -44,7 +44,8 @@ function createNewUser() {
     );
     setTimeout(() => {
       window.open("./findsitter.html");
-      document.close();
+      document.close("./adduser.html");
+      location.reload("./adduser.html"); 
     }, 3000);
   }
 }
