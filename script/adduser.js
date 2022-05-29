@@ -21,7 +21,6 @@ function createNewUser() {
     alert("Husk alle felter må fylles ut!");
     return;
   } else {
-    console.log(userName);
     userArray.unshift({
       picture: { large: img },
       name: { first: userName, last: userLastName },
@@ -33,10 +32,15 @@ function createNewUser() {
 
   let answer = prompt("Ønsker du å opprette en bruker? (ja/nei)");
   if (answer === "ja") {
-    console.log(userArray);
     localStorage.setItem("userArray", JSON.stringify(userArray));
     document.write(
-      `<h1 id="sucsess">` + "Gratulere som ny registret hundepasser" + `</h1>`
+      `<head>` +
+        `<link rel="stylesheet" href="./css/adduser.css" />` +
+        `</head>` +
+        `
+      <h1 id="sucsess">` +
+        "Gratulere som ny registret hundepasser" +
+        `</h1>`
     );
     setTimeout(() => {
       window.open("./findsitter.html");

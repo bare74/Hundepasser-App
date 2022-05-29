@@ -1,25 +1,30 @@
-#sucsess {
-  margin-top: 200px;
+#sucsess{
+  margin-top: 300px;
   text-align: center;
 }
-.new-user-container h1{
+
+.new-user-container h1 {
   display: flex;
-  justify-content:center;
+  justify-content: center;
 }
 
-.new-user-container{
+.field {
+  width: 100%;
+}
+
+.new-user-container {
   margin-top: 100px;
   display: flex;
   flex-direction: column;
 }
 
-.new-user-box{
+.new-user-box {
   display: flex;
- justify-content: center;
+  justify-content: center;
 }
 
-.new-container{
-border: 1px solid black;
+.new-container {
+  border: 1px solid black;
   border-radius: 20px;
   padding: 20px;
   margin: 1em;
@@ -28,18 +33,20 @@ border: 1px solid black;
   flex-direction: column;
 }
 
-input{
+input {
+  width: 90%;
+  ;
   margin: 20px;
-  height:20px;
+  height: 20px;
 }
 
-select{
+select {
   margin-left: 20px;
   width: 90%;
   margin-bottom: 40px;
 }
 
-h5{
+h5 {
   margin: 5px;
   margin-left: 20px;
 }
