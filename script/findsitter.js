@@ -20,8 +20,7 @@ searchBar.addEventListener("keyup", (e) => {
   showUser(filterUser);
 });
 
-
-//Cards for each user 
+//Cards for each user
 function showUser(userArray) {
   let userContainer = document.getElementById("user-container");
   userContainer.innerHTML = "";
@@ -54,7 +53,7 @@ function showUser(userArray) {
     userPage.textContent = "Mere info";
     userPage.addEventListener("click", function () {
       userpageInfo(i);
-      userpageArray(userArray)
+      userpageArray(userArray);
     });
 
     let deleteButton = document.createElement("button");
@@ -81,7 +80,7 @@ function showUser(userArray) {
       location,
       userPage,
       deleteButton,
-      editUser,
+      editUser
     );
     userContainer.append(div);
   }
@@ -101,35 +100,27 @@ function deleteUser(userArray, i) {
 function editUserMember(userArray, i) {
   let editEmail = prompt("Tast inn ny epost adresse...");
   let editPhone = prompt("Tast inn nytt mobilnr...");
+  console.log(userArray, i);
 
   if (editEmail == "" || editPhone == "") {
     alert("Husk alle felter må fylles ut!");
     return;
   } else {
-    console.log(userArray[i]);
-    userArray[i] = {
-      picture: { large: "./assets/dog1.jpg" },
-      name: { first: true, last: true },
-      email: editEmail,
-      phone: editPhone,
-      location: { country:},
-    };
+    userArray[i].email = editEmail;
+    userArray[i].phone = editPhone;
   }
+
   let answer = prompt("Ønsker og endre? (ja/nei)");
   if (answer === "ja") {
     localStorage.setItem("userArray", JSON.stringify(userArray));
     showUser(userArray);
   }
-}
+};
 
 //Filter user by country
 let filterCountry = document.querySelector(".btn-country");
 
 filterCountry.addEventListener("click", () => {
-
-
-
- 
   let selectedCountry = document.getElementById("country-list").value;
   if (selectedCountry === "none") {
     alert("Vennligst velg et land");
@@ -181,7 +172,7 @@ function userpageInfo(i) {
 }
 
 //Send user info to own array
-function userpageArray(userArray){
+function userpageArray(userArray) {
   localStorage.setItem("sitterArray", JSON.stringify(userArray));
 }
 
