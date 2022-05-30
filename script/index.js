@@ -4,6 +4,8 @@ let user = [];
 let userArray = [];
 let randomUser = [];
 
+
+//Fetch the API
 async function fetchUserApi() {
   try {
     let response = await fetch(userApi);
@@ -19,24 +21,13 @@ async function fetchUserApi() {
   }
 }
 
+//Send API info to localStorage
 function randomArray(userArray) {
   localStorage.setItem("randomArray", JSON.stringify(userArray));
   localStorage.setItem("userArray", JSON.stringify(userArray));
 }
 
-var randomSitterArray = JSON.parse(localStorage.getItem("randomArray"));
-
-setInterval(function () {
-  randomUser = randomSitterArray.slice(0, 4).map(function () {
-    return this.splice(Math.floor(Math.random() * this.length), 1)[0];
-  }, randomSitterArray.slice());
-
-  showRandomUser(randomUser);
-}, 3000);
-
-
-
-
+//Random user
 function showRandomUser(randomUser) {
   let randomUserContainer = document.getElementById("random_user_container");
   randomUserContainer.innerHTML = "";
@@ -58,12 +49,15 @@ function showRandomUser(randomUser) {
   }
 }
 
+//Get info from localStorage
+var randomSitterArray = JSON.parse(localStorage.getItem("randomArray"));
 
-// window.onbeforeunload = function () {
-//   console.log("about to clear event listeners prior to leaving page");
-//   // clearInterval(interval, showRandomUser, randomUser, setInterval);
-//   // localStorage.clear(randomSitterArray);
-// };
+//Show user profile and update with new
+setInterval(function () {
+  randomUser = randomSitterArray.slice(0, 4).map(function () {
+    return this.splice(Math.floor(Math.random() * this.length), 1)[0];
+  }, randomSitterArray.slice());
 
-
+  showRandomUser(randomUser);
+}, 3000);
 fetchUserApi();

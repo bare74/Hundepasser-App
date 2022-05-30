@@ -1,3 +1,4 @@
+//Get info from localStorage
 var userCart = JSON.parse(localStorage.getItem("user-cart"));
 console.log(userCart);
 var sitterArray = JSON.parse(localStorage.getItem("sitterArray"));
@@ -5,6 +6,7 @@ console.log(sitterArray);
 var user = sitterArray[userCart];
 console.log(user);
 
+//Creat info card on user
 let userContainer = document.getElementById("user-cart");
 userContainer.innerHTML = "";
 

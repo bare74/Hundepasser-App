@@ -1,8 +1,10 @@
+//Get info from localStorage
 var userArray = JSON.parse(localStorage.getItem("userArray"));
 
 let adduserBtn = document.getElementById("add-user-btn");
 adduserBtn.addEventListener("click", createNewUser);
 
+//Creat new user
 function createNewUser() {
   let userName = document.getElementById("user-name").value;
   let userLastName = document.getElementById("user-lastname").value;
@@ -42,6 +44,8 @@ function createNewUser() {
         "Gratulere som ny registret hundepasser" +
         `</h1>`
     );
+
+    //Sucsess page
     setTimeout(() => {
       window.open("./findsitter.html");
       document.close("./adduser.html");
