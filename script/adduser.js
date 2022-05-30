@@ -45,7 +45,7 @@ function createNewUser() {
         `</h1>`
     );
 
-    //Sucsess page
+    //Sucsess page for creating new user
     setTimeout(() => {
       window.open("./findsitter.html");
       document.close("./adduser.html");

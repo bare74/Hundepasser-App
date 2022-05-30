@@ -7,8 +7,7 @@
 .user-container {
     display: flex;
     justify-content: center;
-    height: 100%;
-
+    flex-wrap: wrap;
 }
 
 .user-header {
@@ -20,7 +19,7 @@
 }
 
 .user-card {
-
+    flex-direction: column;
     border: 1px solid black;
     border-radius: 20px;
     padding: 10em;
@@ -28,51 +27,31 @@
     display: flex;
     align-items: center;
     align-content: center;
-    width: 900px;
-    background-color:white;
+    width: 600px;
+    background-color: white;
+    flex: 50%;
 }
 
 .name {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-    display: block;
     clear: both;
     font-size: 38px;
     opacity: 0.7;
-    left: 51%;
-    top: 45%;
 }
 
 .last-name {
-    position: absolute;
+
     margin: 0;
     padding: 0;
-    line-height: 1;
-    display: block;
-    clear: both;
     font-size: 38px;
     opacity: 0.7;
-
-    left: 51%;
 }
 
 .phone {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-    display: block;
-    clear: both;
+    padding: 10px;
     font-size: 28px;
     opacity: 0.7;
-    top: 70%;
-    left: 51%;
 }
 
 .email {
-    position: absolute;
-    top: 580px;
-    left: 51%;
+    padding: 30px;
 }
