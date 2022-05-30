@@ -42,6 +42,11 @@ body {
   z-index: 1;
 }
 
+.navigation{
+  width: 100%;
+  height:auto;
+}
+
 .navigation li a {
   text-decoration: none;
   letter-spacing: 1px;

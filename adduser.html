@@ -1,75 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link rel="stylesheet" href="./css/style.css" />
-      <link rel="stylesheet" href="./css/adduser.css" />
-    <title>Hundepasser Application</title>
-  </head>
-  <body>
-     <header>
-      <div id="wrapper">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/adduser.css" />
+  <title>Hundepasser Application</title>
+</head>
+
+<body>
+  <header>
       <div class="main_header">
         <img class="logo_img" src="./assets/dogicon.png" alt="Picture of Hundepasser logo" />
         <h1>HUNDEPASSER</h1>
         <div class="navigation">
           <ul>
             <li>
-              <a href="./index.html" class="link_header"><h4>Forside</h4></a>
+              <a href="./index.html" class="link_header">
+                <h4>Forside</h4>
+              </a>
             </li>
             <li>
-              <a href="./findsitter.html" class="link_header"
-                ><h4>Finn hundepasser</h4></a
-              >
+              <a href="./findsitter.html" class="link_header">
+                <h4>Finn hundepasser</h4>
+              </a>
             </li>
             <li>
               <a href="./adduser.html" class="link_header">
-                <h4>Bli hundepasser</h4></a
-              >
+                <h4>Bli hundepasser</h4>
+              </a>
             </li>
           </ul>
         </div>
       </div>
-    </header>
-    <main>
-<div class="new-user-container">
-  <h1>Ny hundepass bruker:</h1>
-<div class="new-user-box">
-  <div class="new-container">
-    <div class="field">
-    <input type="text" name="name" placeholder="Fornavn..." id="user-name" />
-    <small></small>
+  </header>
+  <main>
+    <div class="new-user-container">
+      <h1>Ny hundepass bruker:</h1>
+      <div class="new-user-box">
+        <div class="new-container">
+          <div class="field">
+            <input type="text" name="name" placeholder="Fornavn..." id="user-name" />
+            <small></small>
+          </div>
+          <div class="field">
+            <input type="text" name="name" placeholder="Etternavn..." id="user-lastname" />
+            <small></small>
+          </div>
+          <div class="field">
+            <input type="text" placeholder="Mobil nummer..." id="user-cell" />
+            <small></small>
+          </div>
+          <div class="field">
+            <input type="text" name="email" placeholder="Epost..." id="user-email" />
+            <small></small>
+          </div>
+          <h5>Velg land</h5>
+          <div class="field">
+            <select id="country-list">
+              <option value="none">velg</option>
+              <option value="United States">United States</option>
+              <option value="Iran">Iran</option>
+              <option value="Spain">Spain</option>
+              <option value="Norway">Norway</option>
+            </select>
+            <small></small>
+          </div>
+          <button id="add-user-btn">Lagre</button>
+        </div>
+      </div>
     </div>
-    <div class="field">
-    <input type="text" name="name" placeholder="Etternavn..." id="user-lastname" />
-    <small></small>
-    </div>
-    <div class="field">
-    <input type="text" placeholder="Mobil nummer..." id="user-cell" />
-    <small></small>
-    </div>
-    <div class="field">
-    <input type="text" name="email" placeholder="Epost..." id="user-email" />
-    <small></small>
-    </div>
-    <h5>Velg land</h5>
-    <div class="field">
-    <select id="country-list">
-      <option value="none">velg</option>
-      <option value="United States">United States</option>
-      <option value="Iran">Iran</option>
-      <option value="Spain">Spain</option>
-      <option value="Norway">Norway</option>
-    </select>
-    <small></small>
-    </div>
-    <button id="add-user-btn">Lagre</button>
-  </div>
-</div>
-</div>
-    </main>
-    <script type="module" src="./script/adduser.js"></script>
-  </body>
+  </main>
+  <script type="module" src="./script/adduser.js"></script>
+</body>
+
 </html>
