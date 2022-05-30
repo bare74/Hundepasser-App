@@ -47,9 +47,13 @@ function createNewUser() {
 
     //Sucsess page for creating new user
     setTimeout(() => {
-      window.open("./findsitter.html");
+      var windowReference = window.open("./findsitter.html");
+
+      myService.getUrl().then(function (url) {
+        windowReference.location = url;
+      });
       document.close("./adduser.html");
-      location.reload("./adduser.html"); 
+      location.reload("./adduser.html");
     }, 3000);
   }
 }
