@@ -53,7 +53,6 @@ function createNewUser() {
         windowReference.location = url;
       });
       document.close("./adduser.html");
-      location.reload("./adduser.html");
     }, 3000);
   }
 }
