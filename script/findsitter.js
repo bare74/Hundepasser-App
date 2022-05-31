@@ -100,7 +100,6 @@ function deleteUser(userArray, i) {
 function editUserMember(userArray, i) {
   let editEmail = prompt("Tast inn ny epost adresse...");
   let editPhone = prompt("Tast inn nytt mobilnr...");
-  console.log(userArray, i);
 
   if (editEmail == "" || editPhone == "") {
     alert("Husk alle felter må fylles ut!");

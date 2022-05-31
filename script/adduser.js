@@ -12,7 +12,7 @@ function createNewUser() {
   let userEmail = document.getElementById("user-email").value;
   let country = document.getElementById("country-list").value;
   let img = "./assets/dog1.jpg";
-  //Coordinates for Gokstdad Akademiet manipulte the API
+  //Coordinates for Gokstdad Akademiet manipulate the API
   let latitude = "59.130199";
   let longitude = "10.226210";
 
@@ -37,7 +37,7 @@ function createNewUser() {
       },
     });
   }
-  console.log(userArray);
+
   let answer = prompt("Ønsker du å opprette en bruker? (ja/nei)");
   if (answer === "ja") {
     localStorage.setItem("userArray", JSON.stringify(userArray));
