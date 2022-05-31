@@ -4,14 +4,6 @@ let user = [];
 let userArray = [];
 let randomUser = [];
 
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
-
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
-
 //Fetch the API
 async function fetchUserApi() {
   try {
@@ -70,6 +62,14 @@ setInterval(function () {
 fetchUserApi();
 
 //Login form
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
 function getInfo() {
   var email = document.getElementById("email").value;
   var password = document.getElementById("psw").value;
@@ -79,9 +79,10 @@ function getInfo() {
       email == userArray[i].email &&
       password == userArray[i].login.password
     ) {
+      localStorage.setItem("data", JSON.stringify(email + " " + password));
       console.log(email + "er logget inn!!");
       return;
     }
   }
+  alert("Feil epost eller passord!");
 }
-console.log("Feil epost eller passord!");
