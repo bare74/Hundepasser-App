@@ -39,16 +39,16 @@
   <main>
     <button class="open-button" onclick="openForm()">Login</button>
     <div class="form-popup" id="myForm">
-      <form action="/action_page.php" class="form-container">
+      <form class="form-container">
         <h1>Login</h1>
 
         <label for="email">Email</label>
-        <input type="text" placeholder="Din Epost..." name="email" required>
+        <input type="text" placeholder="Din Epost..." name="email" id="email" required>
 
         <label for="psw">Password</label>
-        <input type="password" placeholder="Passord..." name="psw" required>
+        <input type="password" placeholder="Passord..." name="psw" id="psw" required>
 
-        <button type="submit" class="btn">Login</button>
+        <button type="submit" class="btn" onclick="getInfo()">Login</button>
         <button type="button" class="btn cancel" onclick="closeForm()">Lukk</button>
       </form>
     </div>
