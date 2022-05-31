@@ -1,4 +1,4 @@
-import { userApi } from "../script/index.js";
+// import { userApi } from "../script/index.js";
 //send API to localStorage
 var userArray = JSON.parse(localStorage.getItem("userArray"));
 
@@ -118,31 +118,22 @@ function editUserMember(userArray, i) {
   }
 }
 
-//Filter user by country. This is just to show export/import
-//I know i could just use the array from localStorage
-const filterByCountry = (data, country) => {
-  return data.filter((record) => record.location.country === country);
-};
+//FIlter Country
+let filterCountry = document.querySelector(".btn-country");
 
-fetch(userApi)
-  .then((res) => res.json())
-  .then((data) => {
-    //data from url loaded into variable 'data'
-    let filterCountry = document.querySelector(".btn-country");
+filterCountry.addEventListener("click", () => {
+  var coutryselect = document.getElementById("country-list").selectedIndex;
+  var select = document.getElementsByTagName("option")[coutryselect].value;
 
-    filterCountry.addEventListener("click", () => {
-      var x = document.getElementById("country-list").selectedIndex;
-      var y = document.getElementsByTagName("option")[x].value;
-
-      const out = filterByCountry(data.results, y);
-      console.log(out);
-      showUser(out);
-    });
-    //
-  })
-  .catch((err) => {
-    throw err;
+  const filterCountry = userArray.filter((userArray) => {
+    return userArray.location.country.includes(select);
   });
+  if (select == "none") {
+    alert("Vennligst velg et land");
+  }
+
+  showUser(filterCountry);
+});
 
 //Send user info to loccalStorage
 function userpageInfo(i) {
