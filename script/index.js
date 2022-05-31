@@ -4,6 +4,14 @@ let user = [];
 let userArray = [];
 let randomUser = [];
 
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
 //Fetch the API
 async function fetchUserApi() {
   try {
@@ -71,19 +79,28 @@ window.onclick = function (event) {
   }
 };
 
-const loginForm = document.getElementById("login-form");
-const loginButton = document.getElementById("login-form-submit");
-const loginErrorMsg = document.getElementById("login-error-msg");
+// const loginForm = document.getElementById("login-form");
+// const loginButton = document.getElementById("login-form-submit");
+// const loginErrorMsg = document.getElementById("login-error-msg");
 
-loginButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  const username = loginForm.username.value;
-  const password = loginForm.password.value;
+// loginButton.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   const username = loginForm.username.value;
+//   const password = loginForm.password.value;
 
-  if (username === "user" && password === "web_dev") {
-    alert("You have successfully logged in.");
-    location.reload();
-  } else {
-    loginErrorMsg.style.opacity = 1;
-  }
-});
+// for (i = 0; i < userArray.length; i++) {
+//   if (
+//     username == userArray[i].login.username &&
+//     password == userArray[i].login.password
+//   ) {
+//     console.log(username + "er logget inn!!");
+//   }
+// }
+
+// if (username === "user" && password === "web_dev") {
+//   alert("You have successfully logged in.");
+//   location.reload();
+// } else {
+//   loginErrorMsg.style.opacity = 1;
+// }
+// });

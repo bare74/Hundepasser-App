@@ -32,42 +32,24 @@
               <h4>Bli hundepasser</h4>
             </a>
           </li>
-          <li>
-            <button id="btn-login" onclick="document.getElementById('id01').style.display='block'">Login</button>
-          </li>
         </ul>
       </div>
     </div>
   </header>
   <main>
-    <!-- Inspirert av https://www.w3schools.com/ MODAL FORM-->
-    <div id="id01" class="modal">
+    <button class="open-button" onclick="openForm()">Login</button>
+    <div class="form-popup" id="myForm">
+      <form action="/action_page.php" class="form-container">
+        <h1>Login</h1>
 
-      <form class="modal-content animate" action="/action_page.php" method="post">
-        <div class="imgcontainer">
-          <span onclick="document.getElementById('id01').style.display='none'" class="close"
-            title="Close Modal">&times;</span>
-          <img src="./assets/dog1.jpg" alt="Avatar" class="avatar">
-        </div>
+        <label for="email">Email</label>
+        <input type="text" placeholder="Din Epost..." name="email" required>
 
-        <div class="container">
-          <label for="uname"><b>Brukernavn</b></label>
-          <input type="text" placeholder="Enter Username" name="uname" required>
+        <label for="psw">Password</label>
+        <input type="password" placeholder="Passord..." name="psw" required>
 
-          <label for="psw"><b>Passord</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
-
-          <button id="btn-login" type="submit">Login</button>
-          <label>
-            <input type="checkbox" checked="checked" name="remember"> Husk meg
-          </label>
-        </div>
-
-        <div class="container-form" style="background-color:#f1f1f1">
-          <button type="button" onclick="document.getElementById('id01').style.display='none'"
-            class="cancelbtn">Avbryt</button>
-          <span class="psw">Glemt <a href="#">passord?</a></span>
-        </div>
+        <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Lukk</button>
       </form>
     </div>
     <div class="main-container">
@@ -92,7 +74,7 @@
 
     </div>
   </footer>
-  <script type="module" src="./script/index.js"></script>
+  <script src="./script/index.js"></script>
 </body>
 
 </html>

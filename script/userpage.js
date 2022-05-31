@@ -4,7 +4,7 @@ var userCart = JSON.parse(localStorage.getItem("user-cart"));
 var sitterArray = JSON.parse(localStorage.getItem("sitterArray"));
 
 var user = sitterArray[userCart];
-
+console.log(user);
 //Creat info card on user
 let userContainer = document.getElementById("user-cart");
 userContainer.innerHTML = "";
