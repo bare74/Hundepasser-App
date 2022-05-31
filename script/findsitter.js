@@ -85,7 +85,6 @@ function showUser(userArray) {
     userContainer.append(div);
   }
 }
-console.log(userArray);
 
 //Delete user
 function deleteUser(userArray, i) {
