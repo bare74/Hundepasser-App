@@ -1,3 +1,4 @@
+import { userApi } from "../script/index.js";
 //send API to localStorage
 var userArray = JSON.parse(localStorage.getItem("userArray"));
 
@@ -115,55 +116,33 @@ function editUserMember(userArray, i) {
     localStorage.setItem("userArray", JSON.stringify(userArray));
     showUser(userArray);
   }
+}
+
+//Filter user by country. This is just to show export/import
+//I know i could just use the array from localStorage
+const filterByCountry = (data, country) => {
+  return data.filter((record) => record.location.country === country);
 };
 
-//Filter user by country
-let filterCountry = document.querySelector(".btn-country");
+fetch(userApi)
+  .then((res) => res.json())
+  .then((data) => {
+    //data from url loaded into variable 'data'
+    let filterCountry = document.querySelector(".btn-country");
 
-filterCountry.addEventListener("click", () => {
-  let selectedCountry = document.getElementById("country-list").value;
-  if (selectedCountry === "none") {
-    alert("Vennligst velg et land");
-  }
-  if (selectedCountry === "United States") {
-    const filterland = userArray.filter((userArray) => {
-      if (userArray.location.country === "United States") {
-        return userArray.location.country;
-      }
+    filterCountry.addEventListener("click", () => {
+      var x = document.getElementById("country-list").selectedIndex;
+      var y = document.getElementsByTagName("option")[x].value;
+
+      const out = filterByCountry(data.results, y);
+      console.log(out);
+      showUser(out);
     });
-
-    showUser(filterland);
-  }
-
-  if (selectedCountry === "Iran") {
-    const filterland = userArray.filter((userArray) => {
-      if (userArray.location.country === "Iran") {
-        return userArray.location.country;
-      }
-    });
-
-    showUser(filterland);
-  }
-
-  if (selectedCountry === "Spain") {
-    const filterland = userArray.filter((userArray) => {
-      if (userArray.location.country === "Spain") {
-        return userArray.location.country;
-      }
-    });
-
-    showUser(filterland);
-  }
-  if (selectedCountry === "Norway") {
-    const filterland = userArray.filter((userArray) => {
-      if (userArray.location.country === "Norway") {
-        return userArray.location.country;
-      }
-    });
-
-    showUser(filterland);
-  }
-});
+    //
+  })
+  .catch((err) => {
+    throw err;
+  });
 
 //Send user info to loccalStorage
 function userpageInfo(i) {
