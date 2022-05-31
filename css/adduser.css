@@ -1,4 +1,4 @@
-#sucsess{
+#sucsess {
   margin-top: 300px;
   text-align: center;
 }
@@ -35,18 +35,17 @@
 
 input {
   width: 90%;
-  ;
   margin: 20px;
   height: 20px;
 }
 
 select {
-  margin-left: 20px;
-  width: 90%;
+
+  width: 100%;
   margin-bottom: 40px;
 }
 
 h5 {
   margin: 5px;
-  margin-left: 20px;
+
 }

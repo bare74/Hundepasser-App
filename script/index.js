@@ -4,7 +4,6 @@ let user = [];
 let userArray = [];
 let randomUser = [];
 
-
 //Fetch the API
 async function fetchUserApi() {
   try {
@@ -61,3 +60,30 @@ setInterval(function () {
   showRandomUser(randomUser);
 }, 3000);
 fetchUserApi();
+
+// Get the modal
+var modal = document.getElementById("id01");
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+// const loginForm = document.getElementById("login-form");
+// const loginButton = document.getElementById("login-form-submit");
+// const loginErrorMsg = document.getElementById("login-error-msg");
+
+// loginButton.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   const username = loginForm.username.value;
+//   const password = loginForm.password.value;
+
+//   if (username === "user" && password === "web_dev") {
+//     alert("You have successfully logged in.");
+//     location.reload();
+//   } else {
+//     loginErrorMsg.style.opacity = 1;
+//   }
+// });

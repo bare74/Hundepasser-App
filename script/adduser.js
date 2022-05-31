@@ -48,11 +48,17 @@ function createNewUser() {
     //Sucsess page for creating new user
     setTimeout(() => {
       var windowReference = window.open("./findsitter.html");
+      var closeWindow = document.close("./adduser.html");
 
       myService.getUrl().then(function (url) {
         windowReference.location = url;
       });
-      document.close("./adduser.html");
+
+      myService.getUrl().then(function (url) {
+        closeWindow.location = url;
+      });
+
+      // document.close("./adduser.html");
     }, 3000);
   }
 }

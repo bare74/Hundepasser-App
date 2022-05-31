@@ -12,31 +12,64 @@
 
 <body>
   <header>
-      <div class="main_header">
-        <img class="logo_img" src="./assets/dogicon.png" alt="Picture of Hundepasser logo" />
-        <h1>HUNDEPASSER</h1>
-        <div class="navigation">
-          <ul>
-            <li>
-              <a href="./index.html" class="link_header">
-                <h4>Forside</h4>
-              </a>
-            </li>
-            <li>
-              <a href="./findsitter.html" class="link_header">
-                <h4>Finn hundepasser</h4>
-              </a>
-            </li>
-            <li>
-              <a href="./adduser.html" class="link_header">
-                <h4>Bli hundepasser</h4>
-              </a>
-            </li>
-          </ul>
-        </div>
+    <div class="main_header">
+      <img class="logo_img" src="./assets/dogicon.png" alt="Picture of Hundepasser logo" />
+      <h1>HUNDEPASSER</h1>
+      <div class="navigation">
+        <ul>
+          <li>
+            <a href="./index.html" class="link_header">
+              <h4>Forside</h4>
+            </a>
+          </li>
+          <li>
+            <a href="./findsitter.html" class="link_header">
+              <h4>Finn hundepasser</h4>
+            </a>
+          </li>
+          <li>
+            <a href="./adduser.html" class="link_header">
+              <h4>Bli hundepasser</h4>
+            </a>
+          </li>
+          <li>
+            <button id="btn-login" onclick="document.getElementById('id01').style.display='block'">Login</button>
+          </li>
+        </ul>
       </div>
+    </div>
   </header>
   <main>
+    <!-- Inspirert av https://www.w3schools.com/ MODAL FORM-->
+    <div id="id01" class="modal">
+
+      <form class="modal-content animate" action="/action_page.php" method="post">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+          <img src="./assets/dog1.jpg" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+          <label for="uname"><b>Brukernavn</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+
+          <label for="psw"><b>Passord</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+
+          <button id="btn-login" type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Husk meg
+          </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'"
+            class="cancelbtn">Avbryt</button>
+          <span class="psw">Glemt <a href="#">passord?</a></span>
+        </div>
+      </form>
+    </div>
     <div class="main-container">
       <h1 class="head-txt">Trygg privat hundepass</h1>
       <button class="btn btn-primary" onclick="document.location='./findsitter.html'">Finn hundepasser</button>

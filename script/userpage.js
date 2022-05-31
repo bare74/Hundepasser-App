@@ -34,11 +34,12 @@ let userPhone = document.createElement("p");
 userPhone.classList.add("phone");
 userPhone.innerText = "Mobil nr: " + user.phone;
 
-div.append(
-  img,
-  userName,
-  userLastName,
-  userEmail,
-  userPhone
-);
+let mapButton = document.createElement("button");
+mapButton.classList.add("btn-map");
+mapButton.innerText = "Trykk for kart";
+mapButton.addEventListener("click", function () {
+  window.open("./map.html");
+});
+
+div.append(img, userName, userLastName, userEmail, userPhone, mapButton);
 userContainer.append(div);
