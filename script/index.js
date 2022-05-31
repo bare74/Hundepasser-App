@@ -61,7 +61,7 @@ setInterval(function () {
 }, 3000);
 fetchUserApi();
 
-//Login form
+//Login form. This is just a test
 function openForm() {
   document.getElementById("myForm").style.display = "block";
 }

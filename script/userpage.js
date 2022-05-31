@@ -1,10 +1,8 @@
 //Get info from localStorage
 var userCart = JSON.parse(localStorage.getItem("user-cart"));
-
 var sitterArray = JSON.parse(localStorage.getItem("sitterArray"));
-
 var user = sitterArray[userCart];
-console.log(user);
+
 //Creat info card on user
 let userContainer = document.getElementById("user-cart");
 userContainer.innerHTML = "";
@@ -38,6 +36,7 @@ mapButton.classList.add("btn-map");
 mapButton.innerText = "Trykk for kart";
 mapButton.addEventListener("click", function () {
   window.open("./map.html");
+  window.close("./userpage.html");
 });
 
 div.append(img, userName, userLastName, userEmail, userPhone, mapButton);
