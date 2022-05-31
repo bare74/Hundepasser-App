@@ -1,5 +1,4 @@
-// import { userApi } from "../script/index.js";
-//send API to localStorage
+//Get API from localStorage
 var userArray = JSON.parse(localStorage.getItem("userArray"));
 
 const searchBar = document.getElementById("searchBar");
@@ -118,7 +117,7 @@ function editUserMember(userArray, i) {
   }
 }
 
-//FIlter Country
+//Filter by Country
 let filterCountry = document.querySelector(".btn-country");
 
 filterCountry.addEventListener("click", () => {
@@ -130,6 +129,11 @@ filterCountry.addEventListener("click", () => {
   });
   if (select == "none") {
     alert("Vennligst velg et land");
+    return;
+  }
+  if (filterCountry.length === 0) {
+    alert("Finner ingen i dette landet");
+    return;
   }
 
   showUser(filterCountry);
