@@ -61,7 +61,7 @@ setInterval(function () {
 }, 3000);
 fetchUserApi();
 
-//Change head text
+//Change head text after four second
 async function myHeadText() {
   let myPromise = new Promise(function (resolve) {
     setTimeout(function () {
@@ -72,7 +72,7 @@ async function myHeadText() {
 }
 myHeadText();
 
-//Login form. This is just a test. Use data from API to login:
+//Login form. This is just a test. Use data from API to login with email and password:
 function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
@@ -133,23 +133,23 @@ function addZero(n) {
   return (parseInt(n, 10) < 10 ? "0" : "") + n;
 }
 
-// Set Background img
+// Set Background img with different hour
 function setBgGreet() {
   let today = new Date(),
     hour = today.getHours();
 
   if (hour < 12) {
     document.getElementById("img-main").src = `../assets/pet.jpg`;
-    greeting.textContent = "God morgen, ";
+    greeting.textContent = "God morgen";
   } else if (hour < 18) {
     document.getElementById("img-main").src = `../assets/dog2.jpg`;
-    greeting.textContent = "God ettermiddag, ";
+    greeting.textContent = "God ettermiddag";
   } else {
     document.getElementById("img-main").src = `../assets/dog1.jpg`;
-    greeting.textContent = "God kveld, ";
+    greeting.textContent = "God kveld";
   }
 }
-
+//Get name fromlocalStorage
 function getName() {
   if (localStorage.getItem("name") === null) {
     name.textContent = "Skriv ditt navn her";
@@ -158,6 +158,7 @@ function getName() {
   }
 }
 
+//Send input name to localStorage
 function setName(e) {
   if (e.type === "keypress") {
     if (e.which == 13 || e.keyCode == 13) {
@@ -174,4 +175,3 @@ name.addEventListener("blur", setName);
 showTime();
 setBgGreet();
 getName();
-getFocus();
