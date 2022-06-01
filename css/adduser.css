@@ -33,6 +33,12 @@
   flex-direction: column;
 }
 
+form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 input {
   width: 90%;
   margin: 20px;
@@ -40,12 +46,20 @@ input {
 }
 
 select {
-
   width: 100%;
   margin-bottom: 40px;
 }
 
 h5 {
   margin: 5px;
+}
 
+.quotes-container {
+  background-color: yellow;
+  width: 100%;
+}
+
+.quotes-container h1 {
+  display: flex;
+  justify-content: center;
 }

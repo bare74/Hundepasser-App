@@ -39,7 +39,7 @@ function createNewUser() {
       login: { password: password },
     });
   }
-
+  //Sucsess page for creating new user
   let answer = prompt("Ønsker du å opprette en bruker? (ja/nei)");
   if (answer === "ja") {
     localStorage.setItem("userArray", JSON.stringify(userArray));
@@ -53,7 +53,6 @@ function createNewUser() {
         `</h1>`
     );
 
-    //Sucsess page for creating new user
     setTimeout(() => {
       var windowReference = window.open("./findsitter.html");
       var closeWindow = document.close("./adduser.html");
@@ -68,3 +67,13 @@ function createNewUser() {
     }, 2000);
   }
 }
+writeRandomQuote = function () {
+  var quotes = new Array();
+  quotes[0] = "En god tid for hunder";
+  quotes[1] = "All lidenskap, alle kjæledyr";
+  quotes[2] = "Ta vare på dine firbeinte venner";
+  quotes[3] = "Alt kjæledyret ditt trenger";
+  var rand = Math.floor(Math.random() * quotes.length);
+  document.write(quotes[rand]);
+};
+writeRandomQuote();

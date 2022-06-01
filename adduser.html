@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="text/javascript"></script>
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="./css/adduser.css" />
   <title>Hundepasser Application</title>
@@ -40,45 +41,51 @@
     <div class="new-user-container">
       <h1>Ny hundepass bruker:</h1>
       <div class="new-user-box">
-        <div class="new-container">
-          <div class="field">
-            <input type="text" name="name" placeholder="Fornavn..." id="user-name" />
-            <small></small>
-          </div>
-          <div class="field">
-            <input type="text" name="name" placeholder="Etternavn..." id="user-lastname" />
-            <small></small>
-          </div>
-          <div class="field">
-            <input type="text" placeholder="Mobil nummer..." id="user-cell" />
-            <small></small>
-          </div>
-          <div class="field">
-            <input type="text" name="email" placeholder="Epost..." id="user-email" />
-            <small></small>
-          </div>
-          <div class="field">
-            <input type="password" placeholder="Passord..." name="psw" required id="user-password">
-            <small></small>
-          </div>
-          <h5>Velg land</h5>
-          <div class="field">
-            <select id="country-list">
-              <option value="none">velg</option>
-              <option value="Angola">Angola</option>
-              <option value="Denmark">Denmark</option>
-              <option value="Iran">Iran</option>
-              <option value="Norway">Norway</option>
-              <option value="Spain">Spain</option>
-              <option value="United States">United States</option>
-            </select>
-            <medium></medium>
-          </div>
-          <button id="add-user-btn">Lagre</button>
-        </div>
+        <form onSubmit="return validateEmail(this);" action="">
+          <div class="new-container">
+            <div class="field">
+              <input type="text" name="name" placeholder="Fornavn..." id="user-name" required />
+              <small></small>
+            </div>
+            <div class="field">
+              <input type="text" name="name" placeholder="Etternavn..." id="user-lastname" required />
+              <small></small>
+            </div>
+            <div class="field">
+              <input type="text" placeholder="Mobil nummer..." id="user-cell" required />
+              <small></small>
+            </div>
+            <div class="field">
+              <input type="text" name="email" placeholder="Epost..." id="user-email" required />
+              <small></small>
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Passord..." name="psw" required id="user-password" required>
+              <small></small>
+            </div>
+            <h5>Velg land</h5>
+            <div class="field">
+              <select id="country-list">
+                <option value="none">velg</option>
+                <option value="Angola">Angola</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Iran">Iran</option>
+                <option value="Norway">Norway</option>
+                <option value="Spain">Spain</option>
+                <option value="United States">United States</option>
+              </select>
+              <medium></medium>
+            </div>
+            <button id="add-user-btn">Lagre</button>
+        </form>
       </div>
     </div>
+
   </main>
+  <div class="quotes-container">
+
+  </div>
+  <h1 writeRandomQuote();></h1>
   <script src="./script/adduser.js"></script>
 </body>
 

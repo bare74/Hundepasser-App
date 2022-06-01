@@ -1,7 +1,3 @@
-/* .container {
-  margin-bottom: 40px;
-} */
-
 body {
   background: #ededed;
 }
@@ -10,7 +6,8 @@ body {
   text-align: center;
   margin-bottom: 40px;
 }
-#searchBar{
+
+#searchBar {
   width: 200px;
   height: 28px;
 }
@@ -74,20 +71,21 @@ select {
 }
 
 .btn-country {
- 
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.btn-country-select{
- width:180px;
- margin-top: 35px;
- margin-bottom: 35px;
+.btn-country-select {
+  width: 180px;
+  margin-top: 35px;
+  margin-bottom: 35px;
 }
 
-#user-page, #btn{
-  font-size:10px;
-  margin:10px;
-  width:150px;
-} 
+#user-page,
+#btn {
+  font-size: 10px;
+  margin: 10px;
+  width: 150px;
+}
