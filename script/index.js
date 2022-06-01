@@ -139,13 +139,13 @@ function setBgGreet() {
     hour = today.getHours();
 
   if (hour < 12) {
-    document.getElementById("img-main").src = `../assets/pet.jpg`;
+    document.getElementById("img-main").src = `./assets/pet.jpg`;
     greeting.textContent = "God morgen";
   } else if (hour < 18) {
-    document.getElementById("img-main").src = `../assets/dog2.jpg`;
+    document.getElementById("img-main").src = `./assets/dog2.jpg`;
     greeting.textContent = "God ettermiddag";
   } else {
-    document.getElementById("img-main").src = `../assets/dog1.jpg`;
+    document.getElementById("img-main").src = `./assets/dog1.jpg`;
     greeting.textContent = "God kveld";
   }
 }
