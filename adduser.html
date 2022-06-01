@@ -41,7 +41,7 @@
     <div class="new-user-container">
       <h1>Ny hundepass bruker:</h1>
       <div class="new-user-box">
-        <form onSubmit="return validateEmail(this);" action="">
+        <form onSubmit="return validateEmail(this);">
           <div class="new-container">
             <div class="field">
               <input type="text" name="name" placeholder="Fornavn..." id="user-name" required />
@@ -60,7 +60,7 @@
               <small></small>
             </div>
             <div class="field">
-              <input type="password" placeholder="Passord..." name="psw" required id="user-password" required>
+              <input type="current-password" placeholder="Passord..." name="psw" required id="user-password" required>
               <small></small>
             </div>
             <h5>Velg land</h5>
@@ -80,12 +80,12 @@
         </form>
       </div>
     </div>
-
+    <div class="quotes-container">
+      <!-- <h1 writeRandomQuote();></h1> -->
+    </div>
   </main>
-  <div class="quotes-container">
 
-  </div>
-  <h1 writeRandomQuote();></h1>
+
   <script src="./script/adduser.js"></script>
 </body>
 

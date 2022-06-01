@@ -19,6 +19,10 @@ body {
   height: 80%;
 }
 
+.main-container {
+  width: 100%;
+}
+
 .img-main {
   width: 100%;
   height: auto
@@ -157,7 +161,7 @@ button {
 }
 
 .form-container input[type=text],
-.form-container input[type=password] {
+.form-container input[type=current-password] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -166,7 +170,7 @@ button {
 }
 
 .form-container input[type=text]:focus,
-.form-container input[type=password]:focus {
+.form-container input[type=current-password]:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -192,5 +196,24 @@ button {
 }
 
 .footer {
-  padding: 150px
+  background-color: grey;
+  margin-top: 60px;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#time {
+  font-size: 5rem;
+}
+
+.footer h1 {
+  margin-bottom: 3rem;
+}
+
+.footer h2 {
+  font-size: 20px;
+  margin-bottom: 3rem;
 }

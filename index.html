@@ -39,23 +39,23 @@
   <main>
     <button class="open-button" onclick="openForm()">Login</button>
     <div class="form-popup" id="myForm">
-      <form class="form-container">
+      <form class="form-container" action="" method="post">
         <h1>Login</h1>
 
         <label for="email">Epost</label>
         <input type="text" placeholder="Din Epost..." name="email" id="email" required>
 
         <label for="psw">Passord</label>
-        <input type="password" placeholder="Passord..." name="psw" id="psw" required>
+        <input type="current-password" placeholder="Passord..." name="psw" id="psw" required>
 
         <button type="submit" class="btn" onclick="getInfo()">Login</button>
         <button type="button" class="btn cancel" onclick="closeForm()">Lukk</button>
       </form>
     </div>
     <div class="main-container">
-      <h1 class="head-txt">Trygg privat hundepass</h1>
+      <h1 class="head-txt" id="head-txt">Trygg privat hundepass</h1>
       <button class="btn btn-primary" onclick="document.location='./findsitter.html'">Finn hundepasser</button>
-      <img class="img-main" src="./assets/pet.jpg" alt="Image of a sad dog">
+      <img class="img-main" id="img-main" src="./assets/pet.jpg" alt="Image of a sad dog">
 
     </div>
     <div class="container-text">
@@ -69,11 +69,15 @@
         Hundepassere</button>
     </div>
   </main>
-  <footer>
-    <div class="footer">
-
-    </div>
-  </footer>
+  <div class="footer">
+    <time id="time"></time>
+    <h1>
+      <span id="greeting"></span><br>
+    </h1>
+    <h2>
+      <span id="name" contenteditable="true"></span>
+    </h2>
+  </div>
   <script src="./script/index.js"></script>
 </body>
 

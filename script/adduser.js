@@ -67,13 +67,3 @@ function createNewUser() {
     }, 2000);
   }
 }
-writeRandomQuote = function () {
-  var quotes = new Array();
-  quotes[0] = "En god tid for hunder";
-  quotes[1] = "All lidenskap, alle kjæledyr";
-  quotes[2] = "Ta vare på dine firbeinte venner";
-  quotes[3] = "Alt kjæledyret ditt trenger";
-  var rand = Math.floor(Math.random() * quotes.length);
-  document.write(quotes[rand]);
-};
-writeRandomQuote();

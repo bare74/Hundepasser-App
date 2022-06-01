@@ -54,7 +54,8 @@ h5 {
   margin: 5px;
 }
 
-.quotes-container {
+.quotes-container h1 {
+  padding-top: 200px;
   background-color: yellow;
   width: 100%;
 }
