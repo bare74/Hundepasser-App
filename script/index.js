@@ -142,7 +142,7 @@ function addZero(n) {
 }
 
 // Set Background img with different hour
-function setBgGreet() {
+function greetingText() {
   var today = new Date(),
     hour = today.getHours();
 
@@ -181,7 +181,7 @@ nameInput.addEventListener("keypress", setName);
 nameInput.addEventListener("blur", setName);
 
 showTime();
-setBgGreet();
+greetingText();
 getName();
 
 // Set cookie according to you inspired by Coding Status
