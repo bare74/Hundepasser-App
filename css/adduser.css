@@ -53,14 +53,3 @@ select {
 h5 {
   margin: 5px;
 }
-
-.quotes-container h1 {
-  padding-top: 200px;
-  background-color: yellow;
-  width: 100%;
-}
-
-.quotes-container h1 {
-  display: flex;
-  justify-content: center;
-}

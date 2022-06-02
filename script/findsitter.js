@@ -144,7 +144,7 @@ function userpageInfo(i) {
   window.open("./userpage.html");
 }
 
-//Send user info to own array
+//Send userpage info to own array
 function userpageArray(userArray) {
   localStorage.setItem("sitterArray", JSON.stringify(userArray));
 }

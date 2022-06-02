@@ -72,7 +72,8 @@ async function myHeadText() {
 }
 myHeadText();
 
-//Login form. This is just a test. Use data from API to login with email and password:
+//Login form. Use data from API to login with email and password for each user:
+// USERNAME : karl.johnson@example.com PASSWORD: lovelove
 function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
@@ -90,7 +91,10 @@ function getInfo() {
       email == userArray[i].email &&
       password == userArray[i].login.password
     ) {
-      localStorage.setItem("data", JSON.stringify(email + " " + password));
+      localStorage.setItem(
+        "data",
+        JSON.stringify(email + " " + password + " " + username)
+      );
       document.write(
         `<head>` +
           `<link rel="stylesheet" href="./css/adduser.css" />` +
@@ -101,6 +105,15 @@ function getInfo() {
           `</h1>`
       );
       console.log(email + "er logget inn!!");
+
+      setTimeout(() => {
+        var windowReference = window.open("./index.html");
+
+        myService.getUrl().then(function (url) {
+          windowReference.location = url;
+        });
+      }, 2000);
+
       return;
     }
   }
@@ -175,3 +188,56 @@ name.addEventListener("blur", setName);
 showTime();
 setBgGreet();
 getName();
+
+// set cookie according to you inspired by Coding Status
+var cookieName = "Hundepasser App";
+var cookieValue = "Hundepasser";
+var cookieExpireDays = 3;
+
+// when users click accept button
+let acceptCookie = document.getElementById("acceptCookie");
+acceptCookie.onclick = function () {
+  createCookie(cookieName, cookieValue, cookieExpireDays);
+};
+
+// function to set cookie in web browser
+let createCookie = function (cookieName, cookieValue, cookieExpireDays) {
+  let currentDate = new Date();
+  currentDate.setTime(
+    currentDate.getTime() + cookieExpireDays * 24 * 60 * 60 * 1000
+  );
+  let expires = "expires=" + currentDate.toGMTString();
+  document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
+  if (document.cookie) {
+    document.getElementById("cookiePopup").style.display = "none";
+  } else {
+    alert("Vær vennlig og godta og aksepter informasjonskapsler");
+  }
+};
+
+// get cookie from the web browser
+let getCookie = function (cookieName) {
+  let name = cookieName + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == " ") {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+};
+// check cookie is set or not
+let checkCookie = function () {
+  let check = getCookie(cookieName);
+  if (check == "") {
+    document.getElementById("cookiePopup").style.display = "block";
+  } else {
+    document.getElementById("cookiePopup").style.display = "none";
+  }
+};
+checkCookie();

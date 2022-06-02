@@ -21,15 +21,16 @@ body {
 
 .main-container {
   width: 100%;
+  margin-top: -30px;
 }
 
 .img-main {
   width: 100%;
-  height: auto
+  height: 100%;
 }
 
 .main_header h1 {
-  padding: 10px;
+  padding: 20px;
   height: auto;
   width: 40%;
   text-align: center;
@@ -87,7 +88,7 @@ body {
 
 .btn-primary {
   position: absolute;
-  top: 380px;
+  top: 420px;
   left: 7%;
   width: 300px;
   height: 50px;
@@ -218,4 +219,29 @@ button {
   font-size: 20px;
   margin-bottom: 3rem;
   opacity: 0.5;
+}
+
+#cookiePopup {
+  background: white;
+  width: 25%;
+  position: fixed;
+  left: 10px;
+  bottom: 20px;
+  box-shadow: 0px 0px 15px #cccccc;
+  padding: 5px 60px;
+}
+
+#cookiePopup p {
+  text-align: left;
+  font-size: 15px;
+  color: #4e4e4e;
+}
+
+#cookiePopup button {
+  margin: 10px;
+  width: 100%;
+  background: #d4af7a;
+  padding: 5px;
+  border-radius: 20px;
+  color: white;
 }
