@@ -184,18 +184,18 @@ showTime();
 setBgGreet();
 getName();
 
-// set cookie according to you inspired by Coding Status
+// Set cookie according to you inspired by Coding Status
 let cookieName = "Hundepasser App",
   cookieValue = "Hundepasser",
   cookieExpireDays = 3;
 
-// when users click accept button
+//When users click accept button
 let acceptCookie = document.getElementById("acceptCookie");
 acceptCookie.onclick = function () {
   createCookie(cookieName, cookieValue, cookieExpireDays);
 };
 
-// function to set cookie in web browser
+//Function to set cookie in web browser
 let createCookie = function (cookieName, cookieValue, cookieExpireDays) {
   let currentDate = new Date();
   currentDate.setTime(
@@ -210,7 +210,7 @@ let createCookie = function (cookieName, cookieValue, cookieExpireDays) {
   }
 };
 
-// get cookie from the web browser
+//Get cookie from the web browser
 let getCookie = function (cookieName) {
   var name = cookieName + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
