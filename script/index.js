@@ -102,8 +102,6 @@ function getInfo() {
           "Gratulere du er logget inn" +
           `</h1>`
       );
-      console.log(email + "er logget inn!!");
-
       setTimeout(() => {
         let windowReference = window.open("./index.html");
 
@@ -111,7 +109,6 @@ function getInfo() {
           windowReference.location = url;
         });
       }, 2000);
-
       return;
     }
   }
