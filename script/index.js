@@ -1,9 +1,9 @@
-const userApi = "https://randomuser.me/api/?page=3&results=200&seed=abc";
-let headtext = "Trenger du eller vil du bli hundepasser !!";
+const userApi = "https://randomuser.me/api/?page=3&results=200&seed=abc"; //Easy to export if needed
+let mainHeadText = "Trenger du eller vil du bli hundepasser !!"; //Easy to change this
 
-let user = [];
-let userArray = [];
-let randomUser = [];
+let user = [],
+  userArray = [],
+  randomUser = [];
 
 //Fetch the API
 async function fetchUserApi() {
@@ -50,9 +50,9 @@ function showRandomUser(randomUser) {
 }
 
 //Get info from localStorage
-var randomSitterArray = JSON.parse(localStorage.getItem("randomArray"));
+let randomSitterArray = JSON.parse(localStorage.getItem("randomArray"));
 
-//Show user profile and update with new
+//Show user profile random
 setInterval(function () {
   randomUser = randomSitterArray.slice(0, 4).map(function () {
     return this.splice(Math.floor(Math.random() * this.length), 1)[0];
@@ -64,12 +64,12 @@ fetchUserApi();
 
 //Change head text after four second
 async function myHeadText() {
-  let myPromise = new Promise(function (resolve) {
+  let headText = new Promise(function (resolve) {
     setTimeout(function () {
-      resolve(headtext);
+      resolve(mainHeadText);
     }, 4000);
   });
-  document.getElementById("head-txt").innerHTML = await myPromise;
+  document.getElementById("head-txt").innerHTML = await headText;
 }
 myHeadText();
 
@@ -84,8 +84,8 @@ function closeForm() {
 }
 
 function getInfo() {
-  var email = document.getElementById("email").value;
-  var password = document.getElementById("psw").value;
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("psw").value;
 
   for (i = 0; i < userArray.length; i++) {
     if (
@@ -105,7 +105,7 @@ function getInfo() {
       console.log(email + "er logget inn!!");
 
       setTimeout(() => {
-        var windowReference = window.open("./index.html");
+        let windowReference = window.open("./index.html");
 
         myService.getUrl().then(function (url) {
           windowReference.location = url;
@@ -122,7 +122,7 @@ function getInfo() {
 //Watch function inspired by Brad Traversy "codepen"
 const time = document.getElementById("time"),
   greeting = document.getElementById("greeting"),
-  name = document.getElementById("name");
+  nameInput = document.getElementById("name");
 
 // Show Time
 function showTime() {
@@ -163,9 +163,9 @@ function setBgGreet() {
 //Get name fromlocalStorage
 function getName() {
   if (localStorage.getItem("name") === null) {
-    name.textContent = "Skriv ditt navn her";
+    nameInput.textContent = "Skriv ditt navn her";
   } else {
-    name.textContent = localStorage.getItem("name");
+    nameInput.textContent = localStorage.getItem("name");
   }
 }
 
@@ -174,23 +174,23 @@ function setName(e) {
   if (e.type === "keypress") {
     if (e.which == 13 || e.keyCode == 13) {
       localStorage.setItem("name", e.target.innerText);
-      name.blur();
+      nameInput.blur();
     }
   } else {
     localStorage.setItem("name", e.target.innerText);
   }
 }
-name.addEventListener("keypress", setName);
-name.addEventListener("blur", setName);
+nameInput.addEventListener("keypress", setName);
+nameInput.addEventListener("blur", setName);
 
 showTime();
 setBgGreet();
 getName();
 
 // set cookie according to you inspired by Coding Status
-var cookieName = "Hundepasser App";
-var cookieValue = "Hundepasser";
-var cookieExpireDays = 3;
+let cookieName = "Hundepasser App",
+  cookieValue = "Hundepasser",
+  cookieExpireDays = 3;
 
 // when users click accept button
 let acceptCookie = document.getElementById("acceptCookie");

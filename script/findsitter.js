@@ -1,5 +1,5 @@
 //Get API from localStorage
-var userArray = JSON.parse(localStorage.getItem("userArray"));
+let userArray = JSON.parse(localStorage.getItem("userArray"));
 
 const searchBar = document.getElementById("searchBar");
 
@@ -121,8 +121,8 @@ function editUserMember(userArray, i) {
 let filterCountry = document.querySelector(".btn-country");
 
 filterCountry.addEventListener("click", () => {
-  var coutryselect = document.getElementById("country-list").selectedIndex;
-  var select = document.getElementsByTagName("option")[coutryselect].value;
+  let coutryselect = document.getElementById("country-list").selectedIndex;
+  let select = document.getElementsByTagName("option")[coutryselect].value;
 
   const filterCountry = userArray.filter((userArray) => {
     return userArray.location.country.includes(select);

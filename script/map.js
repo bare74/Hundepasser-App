@@ -1,14 +1,14 @@
 //Get info from localStorage
-var userCart = JSON.parse(localStorage.getItem("user-cart"));
-var sitterArray = JSON.parse(localStorage.getItem("sitterArray"));
-var user = sitterArray[userCart];
+let userCart = JSON.parse(localStorage.getItem("user-cart"));
+let sitterArray = JSON.parse(localStorage.getItem("sitterArray"));
+let user = sitterArray[userCart];
 
 //Coordinates from API
-let latitudeUser = user.location.coordinates.latitude;
-let longitudeUser = user.location.coordinates.longitude;
+let latitudeUser = user.location.coordinates.latitude,
+  longitudeUser = user.location.coordinates.longitude;
 
 //MapTiler
-var map = L.map(`map`).setView([latitudeUser, longitudeUser], 4);
+let map = L.map(`map`).setView([latitudeUser, longitudeUser], 4);
 
 L.tileLayer(
   `https://api.maptiler.com/maps/streets/{z}/{x}/{y}@2x.png?key=VPQlkGIwuKMHBRwLEqrI`,
@@ -20,5 +20,5 @@ L.tileLayer(
   }
 ).addTo(map);
 
-var marker = L.marker([latitudeUser, longitudeUser]).addTo(map);
+let marker = L.marker([latitudeUser, longitudeUser]).addTo(map);
 map.setView(new L.LatLng(latitudeUser, longitudeUser), 4);

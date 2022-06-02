@@ -1,5 +1,5 @@
 //Get info from localStorage
-var userArray = JSON.parse(localStorage.getItem("userArray"));
+let userArray = JSON.parse(localStorage.getItem("userArray"));
 
 let adduserBtn = document.getElementById("add-user-btn");
 adduserBtn.addEventListener("click", createNewUser);
@@ -54,8 +54,8 @@ function createNewUser() {
     );
 
     setTimeout(() => {
-      var windowReference = window.open("./findsitter.html");
-      var closeWindow = document.close("./adduser.html");
+      let windowReference = window.open("./findsitter.html");
+      let closeWindow = document.close("./adduser.html");
 
       myService.getUrl().then(function (url) {
         windowReference.location = url;
