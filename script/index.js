@@ -184,7 +184,7 @@ showTime();
 greetingText();
 getName();
 
-// Set cookie according to you inspired by Coding Status
+// Set cookie inspired by Coding Status
 let cookieName = "Hundepasser App",
   cookieValue = "Hundepasser",
   cookieExpireDays = 3;
