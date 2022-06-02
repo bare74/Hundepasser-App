@@ -92,7 +92,7 @@ function getInfo() {
       email == userArray[i].email &&
       password == userArray[i].login.password
     ) {
-      localStorage.setItem("data", JSON.stringify(email + " " + password));
+      sessionStorage.setItem("data", JSON.stringify(email + " " + password));
       document.write(
         `<head>` +
           `<link rel="stylesheet" href="./css/adduser.css" />` +
