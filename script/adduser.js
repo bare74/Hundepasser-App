@@ -13,7 +13,7 @@ function createNewUser() {
   let country = document.getElementById("country-list").value;
   let password = document.getElementById("user-password").value;
   let img = "./assets/dog1.jpg";
-  //Coordinates for Gokstdad Akademiet manipulate the API
+  //Coordinates for Gokstdad Akademiet :-)
   let latitude = "59.130199";
   let longitude = "10.226210";
 

@@ -1,4 +1,5 @@
 const userApi = "https://randomuser.me/api/?page=3&results=200&seed=abc";
+let headtext = "Trenger du eller vil du bli hundepasser !!";
 
 let user = [];
 let userArray = [];
@@ -65,7 +66,7 @@ fetchUserApi();
 async function myHeadText() {
   let myPromise = new Promise(function (resolve) {
     setTimeout(function () {
-      resolve("Trenger du eller vil du bli hundepasser !!");
+      resolve(headtext);
     }, 4000);
   });
   document.getElementById("head-txt").innerHTML = await myPromise;
@@ -91,10 +92,7 @@ function getInfo() {
       email == userArray[i].email &&
       password == userArray[i].login.password
     ) {
-      localStorage.setItem(
-        "data",
-        JSON.stringify(email + " " + password + " " + username)
-      );
+      localStorage.setItem("data", JSON.stringify(email + " " + password));
       document.write(
         `<head>` +
           `<link rel="stylesheet" href="./css/adduser.css" />` +
