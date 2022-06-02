@@ -1,5 +1,5 @@
 //Get API from localStorage
-let userArray = JSON.parse(localStorage.getItem("userArray"));
+var userArray = JSON.parse(localStorage.getItem("userArray"));
 
 const searchBar = document.getElementById("searchBar");
 
@@ -89,7 +89,7 @@ function showUser(userArray) {
 
 //Delete user
 function deleteUser(userArray, i) {
-  let answer = prompt("Ønsker du å slette?(ja/nei)");
+  var answer = prompt("Ønsker du å slette?(ja/nei)");
   if (answer === "ja") {
     userArray.splice(i, 1);
     localStorage.setItem("userArray", JSON.stringify(userArray));
@@ -99,8 +99,8 @@ function deleteUser(userArray, i) {
 
 //Edit user
 function editUserMember(userArray, i) {
-  let editEmail = prompt("Tast inn ny epost adresse...");
-  let editPhone = prompt("Tast inn nytt mobilnr...");
+  var editEmail = prompt("Tast inn ny epost adresse...");
+  var editPhone = prompt("Tast inn nytt mobilnr...");
 
   if (editEmail == "" || editPhone == "") {
     alert("Husk alle felter må fylles ut!");
@@ -110,7 +110,7 @@ function editUserMember(userArray, i) {
     userArray[i].phone = editPhone;
   }
 
-  let answer = prompt("Ønsker og endre? (ja/nei)");
+  var answer = prompt("Ønsker og endre? (ja/nei)");
   if (answer === "ja") {
     localStorage.setItem("userArray", JSON.stringify(userArray));
     showUser(userArray);

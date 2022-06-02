@@ -1,15 +1,15 @@
 const userApi = "https://randomuser.me/api/?page=3&results=200&seed=abc"; //Easy to export if needed
 let mainHeadText = "Trenger du eller vil du bli hundepasser !!"; //Easy to change this
 
-let user = [],
+var user = [],
   userArray = [],
   randomUser = [];
 
 //Fetch the API
 async function fetchUserApi() {
   try {
-    let response = await fetch(userApi);
-    let data = await response.json();
+    var response = await fetch(userApi);
+    var data = await response.json();
     user.push(data);
 
     data.results.filter((e) => {
@@ -50,7 +50,7 @@ function showRandomUser(randomUser) {
 }
 
 //Get info from localStorage
-let randomSitterArray = JSON.parse(localStorage.getItem("randomArray"));
+var randomSitterArray = JSON.parse(localStorage.getItem("randomArray"));
 
 //Show user profile random
 setInterval(function () {
@@ -64,7 +64,7 @@ fetchUserApi();
 
 //Change head text after four second
 async function myHeadText() {
-  let headText = new Promise(function (resolve) {
+  var headText = new Promise(function (resolve) {
     setTimeout(function () {
       resolve(mainHeadText);
     }, 4000);
@@ -126,7 +126,7 @@ const time = document.getElementById("time"),
 
 // Show Time
 function showTime() {
-  let today = new Date(),
+  var today = new Date(),
     hour = today.getHours(),
     min = today.getMinutes(),
     sec = today.getSeconds();
@@ -146,7 +146,7 @@ function addZero(n) {
 
 // Set Background img with different hour
 function setBgGreet() {
-  let today = new Date(),
+  var today = new Date(),
     hour = today.getHours();
 
   if (hour < 12) {
@@ -215,9 +215,9 @@ let createCookie = function (cookieName, cookieValue, cookieExpireDays) {
 
 // get cookie from the web browser
 let getCookie = function (cookieName) {
-  let name = cookieName + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(";");
+  var name = cookieName + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(";");
   for (let i = 0; i < ca.length; i++) {
     let c = ca[i];
     while (c.charAt(0) == " ") {
@@ -231,7 +231,7 @@ let getCookie = function (cookieName) {
 };
 // check cookie is set or not
 let checkCookie = function () {
-  let check = getCookie(cookieName);
+  var check = getCookie(cookieName);
   if (check == "") {
     document.getElementById("cookiePopup").style.display = "block";
   } else {

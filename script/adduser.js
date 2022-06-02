@@ -1,7 +1,7 @@
 //Get info from localStorage
-let userArray = JSON.parse(localStorage.getItem("userArray"));
+var userArray = JSON.parse(localStorage.getItem("userArray"));
 
-let adduserBtn = document.getElementById("add-user-btn");
+var adduserBtn = document.getElementById("add-user-btn");
 adduserBtn.addEventListener("click", createNewUser);
 
 //Creat new user
