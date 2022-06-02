@@ -82,6 +82,7 @@ function showUser(userArray) {
       deleteButton,
       editUser
     );
+
     userContainer.append(div);
   }
 }

@@ -41,3 +41,22 @@ mapButton.addEventListener("click", function () {
 
 div.append(img, userName, userLastName, userEmail, userPhone, mapButton);
 userContainer.append(div);
+
+//Change color phonenumber mouseover/mouseout
+let phoneColorChange = document.querySelector("p");
+phoneColorChange.addEventListener("mouseover", redText);
+
+phoneColorChange.addEventListener("mouseout", blackText);
+
+phoneColorChange.addEventListener("click", myRemoveFunct);
+
+function myRemoveFunct() {
+  phoneColorChange.removeEventListener("mouseover", redText);
+}
+function redText() {
+  phoneColorChange.style.color = "red";
+  phoneColorChange.style.fontWeight = "900";
+}
+function blackText() {
+  phoneColorChange.style.color = "black";
+}
