@@ -8,7 +8,7 @@ let latitudeUser = user.location.coordinates.latitude,
   longitudeUser = user.location.coordinates.longitude;
 
 //MapTiler
-let map = L.map(`map`).setView([latitudeUser, longitudeUser], 1);
+let map = L.map(`map`).setView([latitudeUser, longitudeUser], 18);
 
 L.tileLayer(
   `https://api.maptiler.com/maps/streets/{z}/{x}/{y}@2x.png?key=VPQlkGIwuKMHBRwLEqrI`,
@@ -21,4 +21,4 @@ L.tileLayer(
 ).addTo(map);
 
 let marker = L.marker([latitudeUser, longitudeUser]).addTo(map);
-map.setView(new L.LatLng(latitudeUser, longitudeUser), 1);
+map.setView(new L.LatLng(latitudeUser, longitudeUser), 18);
